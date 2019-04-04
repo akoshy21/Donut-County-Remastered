@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoleShaker : MonoBehaviour
 {
+    public float speedMod;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class HoleShaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        this.transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speedMod;
     }
 }
