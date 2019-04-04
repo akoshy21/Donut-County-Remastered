@@ -1,9 +1,22 @@
 fileFormatVersion: 2
-guid: 6566d2cf126e6474896fb3c819123f63
+guid: c11dd8c511fbf1e40b865a0b167e9f44
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    2186277476908879412: ImportLogs
+    100000: Camera
+    100002: Light
+    100004: //RootNode
+    100006: Sphere
+    400000: Camera
+    400002: Light
+    400004: //RootNode
+    400006: Sphere
+    2000000: Camera
+    2100000: No Name
+    2300000: Sphere
+    3300000: Sphere
+    4300000: Sphere
+    10800000: Light
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -84,7 +97,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
