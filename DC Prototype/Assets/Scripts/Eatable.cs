@@ -5,7 +5,11 @@ using UnityEngine;
 public class Eatable : MonoBehaviour
 {
 
-    public int size;
+    public int calories;
+
+    private void Start()
+    {
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -5,20 +5,21 @@ using UnityEngine;
 public class HoleManager : MonoBehaviour
 {
     public float speedMod;
-    private int holeSize;
-    public List<GameObject> insideHole;
+    public float holeSize = 1;
+    public List<GameObject> insideHole = new List<GameObject>();
 
     // Update is called once per frame
     void Update()
     {
         // simple movement system to shift our hole around
         this.transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speedMod;
+        
     }
 
-    public void Grow(int objectSize)
+    public void Grow()
     {
-        Vector3 origSize = this.gameObject.transform.localScale;
+        Vector3 modSize = new Vector3(holeSize,0,holeSize);
 
-        this.gameObject.transform.localScale = (1 + (objectSize * 0.1f)) * origSize;
+        transform.localScale += modSize * 0.1f;
     }
 }
