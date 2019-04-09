@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public int score;
 
+    // makes the GameManager static, and stops it from being destroyed.
     private void Awake()
     {
         if(manager != null && manager != this)
@@ -17,9 +18,11 @@ public class GameManager : MonoBehaviour
         else
         {
             manager = this;
+            DontDestroyOnLoad(this);
         }
     }
 
+    // function to score.
     void AddScore(int size)
     {
         score += size * 10;
