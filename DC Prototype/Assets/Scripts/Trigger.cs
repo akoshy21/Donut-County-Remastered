@@ -18,5 +18,6 @@ public class Trigger : MonoBehaviour
     {
         // swaps object colliding with trigger's layer to the layertoexit
         col.gameObject.layer = layerToExit;
+        col.gameObject.GetComponent<Eatable>().magnetic = false;
     }
 }

@@ -9,10 +9,14 @@ public class Eatable : MonoBehaviour
     // The size of the object; corresponds to the increase in size of the hole
     public int calories;
     public bool launchable;
+    public bool magnetic = true;
+    public Vector3 com;
 
     private void Start()
     {
         this.gameObject.tag = "eatable";
+        magnetic = true;
+        com = GetComponent<Rigidbody>().centerOfMass;
     }
 
 }
