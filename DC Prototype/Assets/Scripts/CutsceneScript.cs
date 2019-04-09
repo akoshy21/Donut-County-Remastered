@@ -2,23 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Dialogue
+{
+    public string text;
+    public int currentChar;
+
+    public Dialogue(string Text, int CurrentChar)
+    {
+        text = Text;
+        currentChar = CurrentChar; 
+    }
+}
+
 public class CutsceneScript : MonoBehaviour
 {
-    public List<string> txts = new List<string>();
+    public List<Dialogue> dialogue = new List<Dialogue>();
 
-    public string txt1;
-    public string txt2;
+    protected int mira = 0;
+    protected int bk = 1;
+
+    public Dialogue d1;
+    public Dialogue d2;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        txt1 = "hello";
-        txts.Add(txt1);
+        d1 = new Dialogue("", mira);
+        dialogue.Add(d1);
 
-        txt2 = "some more text";
-        txts.Add(txt2);
+        d2 = new Dialogue("", bk);
+        dialogue.Add(d2);
     }
 
 }
