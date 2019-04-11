@@ -23,4 +23,11 @@ public class HoleManager : MonoBehaviour
 
         transform.localScale += modSize * 0.1f;
     }
+    public void Shrink()
+    {
+        // scales the hole to the holeSize
+        Vector3 modSize = new Vector3(holeSize, 0, holeSize);
+
+        transform.localScale -= modSize * 0.1f;
+    }
 }

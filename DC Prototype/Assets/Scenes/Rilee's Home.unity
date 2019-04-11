@@ -337,6 +337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calories: 1
   launchable: 1
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!54 &228509430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -465,6 +467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calories: 1
   launchable: 0
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!54 &232988310
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -598,6 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravRadius: 2
   gravForce: 100
+  attracted: []
 --- !u!1 &381428346 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: c5eea66355f6b4d6d8e49798b2dd5193,
@@ -697,6 +702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calories: 1
   launchable: 0
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!54 &436290878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -779,7 +786,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436290876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.37, y: 0.35, z: 2.7139}
+  m_LocalPosition: {x: 1.37, y: 0.35, z: 0}
   m_LocalScale: {x: 2.4205425, y: 0.25517, z: 0.47095662}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1285,6 +1292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   calories: 1
   launchable: 0
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!1 &1611615676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,6 +1546,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Morsel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4887026541293019394, guid: 1fdb3806953cc4a9b9d1fdc6e6aba783,
+        type: 3}
+      propertyPath: launchable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4887026541293019405, guid: 1fdb3806953cc4a9b9d1fdc6e6aba783,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1591,11 +1605,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4887026541293019394, guid: 1fdb3806953cc4a9b9d1fdc6e6aba783,
-        type: 3}
-      propertyPath: launchable
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fdb3806953cc4a9b9d1fdc6e6aba783, type: 3}
