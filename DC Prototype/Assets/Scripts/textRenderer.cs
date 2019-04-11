@@ -30,6 +30,7 @@ public class textRenderer : MonoBehaviour
     private int bk = 1;
 
     public Text txt;
+    public Text nametag;
     public int idx;
 
     public float speed;
@@ -66,6 +67,14 @@ public class textRenderer : MonoBehaviour
     {
         //text progresses with spacebar
         txt.text = dialogue[idx].text;
+
+        if(dialogue[idx].currentChar == mira)
+        {
+            nametag.text = "mira";
+        }else if(dialogue[idx].currentChar == bk)
+        {
+            nametag.text = "bk";
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
