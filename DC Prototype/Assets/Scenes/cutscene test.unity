@@ -359,7 +359,7 @@ MonoBehaviour:
   bkRot: {x: 22, y: 207, z: 0}
   txt: {fileID: 1022882634}
   idx: 0
-  speed: 0
+  speed: 0.05
 --- !u!114 &1022882634
 MonoBehaviour:
   m_ObjectHideFlags: 0

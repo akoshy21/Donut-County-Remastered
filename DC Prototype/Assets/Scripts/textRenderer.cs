@@ -39,6 +39,8 @@ public class textRenderer : MonoBehaviour
     Dialogue d3;
     Dialogue d4;
 
+    private int length;
+
     void Start()
     {
         d1 = new Dialogue(CutsceneScript.instance.l1, mira);
@@ -50,6 +52,8 @@ public class textRenderer : MonoBehaviour
         dialogue.Add(d2);
         dialogue.Add(d3);
         dialogue.Add(d4);
+
+        length = 4;
 
         idx = 0;
         txt.text = dialogue[idx].text;
@@ -65,7 +69,10 @@ public class textRenderer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            idx++;
+            if (idx < length - 1)
+            {
+                idx++;
+            }
         }
 
         //camera changes to character speaking 
@@ -73,17 +80,17 @@ public class textRenderer : MonoBehaviour
         {
             if (dialogue[idx - 1].currentChar != mira)
             {
-                myCam.transform.position = Vector3.Lerp(myCam.transform.position, miraPos, .5f);
-                myCam.transform.rotation = Quaternion.Euler(miraRot);
+                myCam.transform.position = Vector3.Lerp(myCam.transform.position, miraPos, speed * Time.deltaTime);
+                myCam.transform.rotation = Quaternion.Lerp(myCam.transform.rotation, Quaternion.Euler(miraRot), Time.time * speed);
             }
         }
         else if (dialogue[idx].currentChar == bk && idx > 0)
         {
             if (dialogue[idx - 1].currentChar != bk)
             {
-                myCam.transform.position = Vector3.Lerp(myCam.transform.position, bkPos, .5f); ;
-                myCam.transform.rotation = Quaternion.Euler(bkRot);
+                myCam.transform.position = Vector3.Lerp(myCam.transform.position, bkPos, speed * Time.deltaTime); ;
+                myCam.transform.rotation = Quaternion.Lerp(myCam.transform.rotation, Quaternion.Euler(bkRot), Time.time * speed);
             }
         }
+        }
     }
-}
