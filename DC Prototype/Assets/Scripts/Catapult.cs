@@ -28,7 +28,7 @@ public class Catapult : MonoBehaviour
             if (current.GetComponent<Eatable>().launchable)
             {
                 current.gameObject.SetActive(true);
-                current.transform.parent = null;
+                current.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                 current.transform.rotation = Quaternion.Euler(0, 0, 0);
                 current.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 current.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
