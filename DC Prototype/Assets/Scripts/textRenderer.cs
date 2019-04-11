@@ -22,30 +22,40 @@ public class textRenderer : MonoBehaviour
     public Camera myCam;
 
     public Vector3 miraPos;
+    public Vector3 miraRot;
     public Vector3 bkPos;
+    public Vector3 bkRot;
 
     private int mira = 0;
     private int bk = 1;
 
     public Text txt;
-    private int idx;
+    public int idx;
+
+    public float speed;
 
     Dialogue d1;
     Dialogue d2;
+    Dialogue d3;
+    Dialogue d4;
 
     void Start()
     {
         d1 = new Dialogue(CutsceneScript.instance.l1, mira);
         d2 = new Dialogue(CutsceneScript.instance.l2, bk);
+        d3 = new Dialogue(CutsceneScript.instance.l3, bk);
+        d4 = new Dialogue(CutsceneScript.instance.l4, mira);
 
         dialogue.Add(d1);
         dialogue.Add(d2);
+        dialogue.Add(d3);
+        dialogue.Add(d4);
 
         idx = 0;
         txt.text = dialogue[idx].text;
 
-        miraPos = new Vector3(0, 0, 0);
-        bkPos = new Vector3(0, 0, 0);
+        myCam.transform.position = miraPos;
+        myCam.transform.rotation = Quaternion.Euler(miraRot);
     }
 
     void Update()
@@ -63,14 +73,16 @@ public class textRenderer : MonoBehaviour
         {
             if (dialogue[idx - 1].currentChar != mira)
             {
-                myCam.transform.position = miraPos;
+                myCam.transform.position = Vector3.Lerp(myCam.transform.position, miraPos, .5f);
+                myCam.transform.rotation = Quaternion.Euler(miraRot);
             }
         }
         else if (dialogue[idx].currentChar == bk && idx > 0)
         {
             if (dialogue[idx - 1].currentChar != bk)
             {
-                myCam.transform.position = bkPos;
+                myCam.transform.position = Vector3.Lerp(myCam.transform.position, bkPos, .5f); ;
+                myCam.transform.rotation = Quaternion.Euler(bkRot);
             }
         }
     }
