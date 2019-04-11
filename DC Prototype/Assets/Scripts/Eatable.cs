@@ -12,9 +12,13 @@ public class Eatable : MonoBehaviour
     public bool magnetic = true;
     public Vector3 com;
 
-    private void Start()
+    private void Awake()
     {
         this.gameObject.tag = "eatable";
+    }
+
+    private void Start()
+    {
         magnetic = true;
         com = GetComponent<Rigidbody>().centerOfMass;
     }

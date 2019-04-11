@@ -4,33 +4,46 @@ using UnityEngine;
 
 public class EatTrigger : MonoBehaviour
 {
+
     public GameObject hole;
     public HoleManager hm;
 
-    void Start()
+    private void Start()
     {
         hole = GameObject.FindGameObjectWithTag("Hole");
         hm = hole.GetComponent<HoleManager>();
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void Update()
     {
-        //if the gameobject colliding is eatable, add to the hole size, grow the hole, and destroy the gameobject
-        if(col.gameObject.tag == "eatable")
+        // finds all eatable objects and checks if their y is lower than the eat point (-5.11).
+        foreach(GameObject cal in GameObject.FindGameObjectsWithTag("eatable"))
         {
-            hm.holeSize += col.gameObject.GetComponent<Eatable>().calories;
-            hm.Grow();
+            if(cal.GetComponent<Transform>().position.y <= -5.11f)
+            {
+                Eat(cal);
+            }
+        }
+    }
 
-            //check if it can be launched, and set the gameobject to false if it can;
-            if (col.GetComponent<Eatable>().launchable)
-            {
-                hm.insideHole.Add(col.gameObject);
-                col.gameObject.SetActive(false);
-            }
-            else
-            {
-                Destroy(col.gameObject);
-            }
+    void Eat(GameObject obj)
+    {
+        hm.holeSize += obj.GetComponent<Eatable>().calories;
+        hm.Grow();
+
+        //check if it can be launched, and set the gameobject to false if it can;
+        if (obj.GetComponent<Eatable>().launchable)
+        {
+            // if the object is launchable, it adds it to the insidehole list, sets the parent to the hole,
+            //then makes the local position centered on the hole and above the eat pt and deactivates it.
+            hm.insideHole.Add(obj);
+            obj.GetComponent<Transform>().SetParent(hole.transform);
+            obj.GetComponent<Transform>().localPosition = new Vector3(0, -5.5f, 0);
+            obj.SetActive(false);
+        }
+        else
+        {
+            Destroy(obj);
         }
     }
 }
