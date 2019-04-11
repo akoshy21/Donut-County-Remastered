@@ -6,6 +6,7 @@ TagManager:
   tags:
   - eatable
   - Hole
+  - water
   layers:
   - Default
   - TransparentFX
