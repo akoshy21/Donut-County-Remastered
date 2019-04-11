@@ -8,7 +8,9 @@ public class Eatable : MonoBehaviour
 
     // The size of the object; corresponds to the increase in size of the hole
     public int calories;
+    // Can it be catapulted?
     public bool launchable;
+
     public bool magnetic = true;
     public Vector3 com;
 

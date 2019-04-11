@@ -32,6 +32,7 @@ public class HoleManager : MonoBehaviour
 
         transform.localScale += modSize * 0.1f;
     }
+<<<<<<< HEAD
 
     void UpdateColliders()
     {
@@ -40,5 +41,13 @@ public class HoleManager : MonoBehaviour
             col.enabled = false;
             col.enabled = true;
         }
+=======
+    public void Shrink()
+    {
+        // scales the hole to the holeSize
+        Vector3 modSize = new Vector3(holeSize, 0, holeSize);
+
+        transform.localScale -= modSize * 0.1f;
+>>>>>>> ff998af065d1e8274bb30bf52dc8d7fc89544f0d
     }
 }
