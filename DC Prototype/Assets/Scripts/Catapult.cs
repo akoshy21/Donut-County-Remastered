@@ -31,7 +31,7 @@ public class Catapult : MonoBehaviour
                 current.gameObject.SetActive(true);
 
                 //set its position and rotation to a resting state
-                current.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                current.transform.parent = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                 current.transform.rotation = Quaternion.Euler(0, 0, 0);
                 current.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
