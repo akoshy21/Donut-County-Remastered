@@ -71,6 +71,7 @@ public class textRenderer : MonoBehaviour
         if(dialogue[idx].currentChar == mira)
         {
             nametag.text = "mira";
+
         }else if(dialogue[idx].currentChar == bk)
         {
             nametag.text = "bk";
