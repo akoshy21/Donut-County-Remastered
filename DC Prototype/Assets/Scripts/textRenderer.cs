@@ -29,6 +29,9 @@ public class textRenderer : MonoBehaviour
     private int mira = 0;
     private int bk = 1;
 
+    public RawImage miraTB;
+    public RawImage bkTB;
+
     public Text txt;
     public Text nametag;
     public int idx;
@@ -71,10 +74,15 @@ public class textRenderer : MonoBehaviour
         if(dialogue[idx].currentChar == mira)
         {
             nametag.text = "mira";
+            miraTB.enabled = true;
+            bkTB.enabled = false;
 
         }else if(dialogue[idx].currentChar == bk)
         {
             nametag.text = "bk";
+            bkTB.enabled = true;
+            miraTB.enabled = false;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
