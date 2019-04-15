@@ -8,6 +8,8 @@ public class HoleManager : MonoBehaviour
     public float holeSize = 1;
     public List<GameObject> insideHole = new List<GameObject>();
     public Vector3 origPos;
+    public bool waterFill;
+    public GameObject water;
 
     private void Start()
     {
@@ -22,6 +24,11 @@ public class HoleManager : MonoBehaviour
         {
             UpdateColliders();
             origPos = transform.position;
+        }
+
+        if(waterFill)
+        {
+            water.SetActive(true);
         }
     }
 

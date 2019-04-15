@@ -37,8 +37,7 @@ public class EatTrigger : MonoBehaviour
             // if the object is launchable, it adds it to the insidehole list, sets the parent to the hole,
             //then makes the local position centered on the hole and above the eat pt and deactivates it.
             hm.insideHole.Add(obj);
-           // obj.GetComponent<Transform>().SetParent(hole.transform);
-           // obj.GetComponent<Transform>().position = new Vector3(0, -5.5f, 0);
+            obj.GetComponent<Transform>().position = new Vector3(0, -5.5f, 0);
             obj.SetActive(false);
         }
         else

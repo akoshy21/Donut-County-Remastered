@@ -6,6 +6,8 @@ public class Catapult : MonoBehaviour
 {
     public HoleManager manager;
     public float launchForce;
+    public GameObject waterCyl;
+    public bool waterSpray;
 
     void Start()
     {
@@ -18,6 +20,11 @@ public class Catapult : MonoBehaviour
         {
             Liftoff();
         }
+
+        if(waterSpray == true)
+        {
+            StartCoroutine(Water());        
+        }
     }
     
     private void Liftoff()
@@ -27,24 +34,43 @@ public class Catapult : MonoBehaviour
             GameObject current = manager.insideHole[i];
             if (current.GetComponent<Eatable>().launchable)
             {
-                //turn the game object back on
-                current.gameObject.SetActive(true);
-
-                //set its position and rotation to a resting state
-                current.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                current.transform.rotation = Quaternion.Euler(0, 0, 0);
-                current.GetComponent<Rigidbody>().velocity = Vector3.zero;
-
-                //yeet that bitch
-                current.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
-
-                //change the hole accordingly
-                manager.insideHole.Remove(current);
-                manager.Shrink();
-                manager.holeSize -= current.GetComponent<Eatable>().calories;
-
+                if (current.tag.Equals("water"))
+                {
+                    waterSpray = true;
+                    manager.insideHole.Remove(current);
+                }
+                else
+                {
+                    LaunchObject(current);
+                }
                 break;
             }
         }
+    }
+
+    void LaunchObject(GameObject obj)
+    {
+        // turn the game object back on
+        obj.gameObject.SetActive(true);
+
+        //set its position and rotation to a resting state
+        obj.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        obj.transform.rotation = Quaternion.Euler(0, 0, 0);
+        obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
+        //yeet that bitch
+        obj.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
+
+        //change the hole accordingly
+        manager.insideHole.Remove(obj);
+        manager.Shrink();
+        manager.holeSize -= obj.GetComponent<Eatable>().calories;
+    }
+
+    public IEnumerator Water()
+    {
+        waterCyl.SetActive(true);
+        yield return new WaitForSeconds(3);
+        waterCyl.SetActive(false);
     }
 }
