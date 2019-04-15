@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Dialogue
 {
@@ -47,6 +48,7 @@ public class textRenderer : MonoBehaviour
 
     void Start()
     {
+
         d1 = new Dialogue(CutsceneScript.instance.l1, mira);
         d2 = new Dialogue(CutsceneScript.instance.l2, bk);
         d3 = new Dialogue(CutsceneScript.instance.l3, bk);
@@ -90,6 +92,10 @@ public class textRenderer : MonoBehaviour
             if (idx < length - 1)
             {
                 idx++;
+            }
+            else
+            {
+                SceneManager.LoadScene("SampleScene");
             }
         }
 
