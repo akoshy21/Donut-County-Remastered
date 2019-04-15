@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 370508795}
   m_Layer: 11
   m_Name: Water
-  m_TagString: Hole
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,6 +717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0279897f54e4d6d884bc4d319af376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hole: {fileID: 7438886}
+  start: 1
   score: 0
 --- !u!4 &417286511
 Transform:
@@ -1612,7 +1614,7 @@ GameObject:
   - component: {fileID: 1421082902}
   m_Layer: 11
   m_Name: Water Cyl
-  m_TagString: Hole
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1940,6 +1942,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: c5eea66355f6b4d6d8e49798b2dd5193, type: 3}
       propertyPath: m_TagString
       value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c5eea66355f6b4d6d8e49798b2dd5193, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c5eea66355f6b4d6d8e49798b2dd5193, type: 3}
       propertyPath: m_IsActive

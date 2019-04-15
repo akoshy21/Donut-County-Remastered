@@ -7,6 +7,7 @@ TagManager:
   - eatable
   - Hole
   - water
+  - introUI
   layers:
   - Default
   - TransparentFX
