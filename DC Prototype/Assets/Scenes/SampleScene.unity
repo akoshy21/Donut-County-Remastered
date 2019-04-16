@@ -137,11 +137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMod: 0.4
-  holeSize: 1
+  holeSize: 0.07
   insideHole: []
   origPos: {x: 0, y: 0, z: 0}
   waterFill: 0
   water: {fileID: 370508793}
+  camera: {fileID: 534669904}
 --- !u!114 &7438889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hole: {fileID: 7438886}
+  annaScene: 0
   start: 1
   score: 0
 --- !u!4 &417286511

@@ -24,7 +24,7 @@ public class HoleManager : MonoBehaviour
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 100, 1 << LayerMask.NameToLayer("Default")))
         {
             Vector3 objectHit = new Vector3(hit.point.x,-0.12f,hit.point.z);
             objectHit.y = this.transform.position.y;
