@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager manager;
     public GameObject hole;
 
+    public bool annaScene;
     public bool start = true;
     public int score;
 
@@ -32,8 +33,10 @@ public class GameManager : MonoBehaviour
             hole.SetActive(true);
             start = false;
             Debug.Log("click");
-
-            SceneManager.UnloadSceneAsync("StartAdditive");
+            if (annaScene)
+            {
+                SceneManager.UnloadSceneAsync("StartAdditive");
+            }
         }
     }
 

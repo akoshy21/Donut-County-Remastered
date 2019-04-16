@@ -42,6 +42,7 @@ public class Catapult : MonoBehaviour
                 else
                 {
                     LaunchObject(current);
+                    current.layer = 9;
                 }
                 break;
             }
@@ -54,7 +55,7 @@ public class Catapult : MonoBehaviour
         obj.gameObject.SetActive(true);
 
         //set its position and rotation to a resting state
-        obj.transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        obj.transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         obj.transform.rotation = Quaternion.Euler(0, 0, 0);
         obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
@@ -72,5 +73,6 @@ public class Catapult : MonoBehaviour
         waterCyl.SetActive(true);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
+        waterSpray = false;
     }
 }

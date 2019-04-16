@@ -23,7 +23,7 @@ public class Gravity : MonoBehaviour
                 collider.gameObject.GetComponent<Rigidbody>().AddForce(forceDirection.normalized * gravForce * Time.fixedDeltaTime);
 
                 //collider.gameObject.GetComponent<Rigidbody>().centerOfMass = transform.position;
-                Debug.Log("tug: " + collider.gameObject.name + " " + forceDirection);
+                //Debug.Log("tug: " + collider.gameObject.name + " " + forceDirection);
 
                 attracted.Add(collider);
             }

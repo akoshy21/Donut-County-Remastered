@@ -10,19 +10,41 @@ public class HoleManager : MonoBehaviour
     public Vector3 origPos;
     public bool waterFill;
     public GameObject water;
+    public Camera camera;
+
+    //public Vector2 objectHit;
 
     private void Start()
     {
-        origPos = this.transform.position;
+        origPos = this.transform.position;   
     }
     // Update is called once per frame
     void Update()
     {
-        // simple movement system to shift our hole around
-        this.transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speedMod;
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        
+        if (Physics.Raycast(ray, out hit))
+        {
+            Vector3 objectHit = new Vector3(hit.point.x,-0.12f,hit.point.z);
+            objectHit.y = this.transform.position.y;
+
+            transform.position = Vector3.MoveTowards(this.transform.position, objectHit, speedMod);
+           // Vector3 headingPos = objectHit - this.transform.position;
+            //float dist = headingPos.magnitude;
+            //Vector3 direct = (headingPos / dist);
+            //direct.y = 0f;
+            //if (dist < (this.transform.localScale.x / 2)){
+            //    this.GetComponent<Rigidbody>().velocity = direct * speedMod;
+            //}            
+            // Do something with the object that was hit by the raycast.
+        }
+
+        //simple movement system to shift our hole around
+       //this.transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speedMod;
         if(origPos != this.transform.position)
         {
-            UpdateColliders();
+            //UpdateColliders();
             origPos = transform.position;
         }
 
@@ -42,7 +64,7 @@ public class HoleManager : MonoBehaviour
 
     void UpdateColliders()
     {
-        foreach (Collider col in Physics.OverlapSphere(transform.position, holeSize))
+        foreach (Collider col in Physics.OverlapSphere(transform.position, this.transform.localScale.x/2.1f))
         {
             col.enabled = false;
             col.enabled = true;

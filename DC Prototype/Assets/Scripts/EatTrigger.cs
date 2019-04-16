@@ -38,6 +38,7 @@ public class EatTrigger : MonoBehaviour
             //then makes the local position centered on the hole and above the eat pt and deactivates it.
             hm.insideHole.Add(obj);
             obj.GetComponent<Transform>().position = new Vector3(0, -5.5f, 0);
+            obj.layer = 9;
             obj.SetActive(false);
         }
         else

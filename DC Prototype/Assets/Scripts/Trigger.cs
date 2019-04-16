@@ -10,6 +10,8 @@ public class Trigger : MonoBehaviour
     // quick detection and changing of the physics layer
     private void OnTriggerEnter(Collider col)
     {
+        Debug.Log("in");
+
         if (col.gameObject.tag.Equals("water"))
         {
             this.GetComponent<HoleManager>().waterFill = true;
@@ -25,6 +27,8 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerExit(Collider col)
     {
+        Debug.Log("out");
+
         // swaps object colliding with trigger's layer to the layertoexit
         col.gameObject.layer = layerToExit;
     }
