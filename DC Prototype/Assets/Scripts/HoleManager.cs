@@ -10,7 +10,7 @@ public class HoleManager : MonoBehaviour
     public Vector3 origPos;
     public bool waterFill;
     public GameObject water;
-    public Camera camera;
+    public Camera cam;
 
     //public Vector2 objectHit;
 
@@ -22,7 +22,7 @@ public class HoleManager : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         
         if (Physics.Raycast(ray, out hit, 100, 1 << LayerMask.NameToLayer("Default")))
         {
