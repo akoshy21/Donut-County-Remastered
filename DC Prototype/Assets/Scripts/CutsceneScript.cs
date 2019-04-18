@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneScript : AnimatedText
+public class CutsceneScript : MonoBehaviour
 {
     public static CutsceneScript instance;
 
@@ -15,13 +15,13 @@ public class CutsceneScript : AnimatedText
     {
         instance = this;
 
-        l1 = "MIRA IS TALKING";
+        l1 = "Mira is talking";
 
-        l2 = "BK IS TALKING";
+        l2 = "BK is talking";
 
-        l3 = "BK IS STILL TALKING";
+        l3 = "BK is still talking";
 
-        l4 = "MIRA IS TALKING AGAIN";
+        l4 = "Mira is talking again";
     }
 
 }

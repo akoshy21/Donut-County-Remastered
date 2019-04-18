@@ -41,6 +41,8 @@ public class textRenderer : MonoBehaviour
     public Text dots;
     public int idx;
 
+    public bool complete;
+
     public float speed;
 
     Dialogue d1;
@@ -58,9 +60,16 @@ public class textRenderer : MonoBehaviour
 
         while( i < line.Length)
         {
+            dots.enabled = false;
             str += line[i++];
             yield return new WaitForSeconds(0.05f);
             txt.text = str;
+        }
+
+        if(i >= line.Length)
+        {
+            complete = true;
+            dots.enabled = true;
         }
     }
 
@@ -109,10 +118,11 @@ public class textRenderer : MonoBehaviour
         //txt.text = dialogue[idx].text;
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && complete == true)
         {
             if (idx < length - 1)
             {
+                complete = false;
                 idx++;
                 StartCoroutine(AnimateText(dialogue[idx].text));
             }
@@ -140,17 +150,5 @@ public class textRenderer : MonoBehaviour
             }
         }
 
-        if (dialogue[idx + 1] != null)
-        {
-            if (dialogue[idx].currentChar == dialogue[idx + 1].currentChar)
-            {
-                dots.enabled = true;
-            }
-            else
-            {
-                dots.enabled = false;
-            }
-        }
-
-    }
+      }
     }
