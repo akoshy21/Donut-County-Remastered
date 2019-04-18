@@ -35,6 +35,7 @@ public class textRenderer : MonoBehaviour
 
     public Text txt;
     public Text nametag;
+    public Text dots;
     public int idx;
 
     public float speed;
@@ -75,13 +76,13 @@ public class textRenderer : MonoBehaviour
 
         if(dialogue[idx].currentChar == mira)
         {
-            nametag.text = "mira";
+            nametag.text = "Mira";
             miraTB.enabled = true;
             bkTB.enabled = false;
 
         }else if(dialogue[idx].currentChar == bk)
         {
-            nametag.text = "bk";
+            nametag.text = "BK";
             bkTB.enabled = true;
             miraTB.enabled = false;
 
@@ -116,5 +117,18 @@ public class textRenderer : MonoBehaviour
                 myCam.transform.rotation = Quaternion.Lerp(myCam.transform.rotation, Quaternion.Euler(bkRot), Time.time * speed);
             }
         }
+
+        if (dialogue[idx + 1] != null)
+        {
+            if (dialogue[idx].currentChar == dialogue[idx + 1].currentChar)
+            {
+                dots.enabled = true;
+            }
+            else
+            {
+                dots.enabled = false;
+            }
         }
+
+    }
     }

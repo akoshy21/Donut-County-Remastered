@@ -15,13 +15,13 @@ public class CutsceneScript : MonoBehaviour
     {
         instance = this;
 
-        l1 = "mira is talking";
+        l1 = "MIRA IS TALKING";
 
-        l2 = "bk is talking";
+        l2 = "BK IS TALKING";
 
-        l3 = "bk is still talking";
+        l3 = "BK IS STILL TALKING";
 
-        l4 = "mira is talking again";
+        l4 = "MIRA IS TALKING AGAIN";
     }
 
 }
