@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneScript : MonoBehaviour
+public class CutsceneScript : AnimatedText
 {
     public static CutsceneScript instance;
 
