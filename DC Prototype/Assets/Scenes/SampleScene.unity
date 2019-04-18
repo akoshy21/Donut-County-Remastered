@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 0.115
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -48,7 +48,7 @@ LightmapSettings:
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
-    m_IndirectOutputScale: 1
+    m_IndirectOutputScale: 0.57
     m_AlbedoBoost: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 0
@@ -298,7 +298,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
@@ -640,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 52bdddb7066619c428175746ff4fb2ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c1e58f6da203ab64d93c710b20694c31, type: 2}
+      objectReference: {fileID: 2100000, guid: 3f4f0bbd61d1b406b9b22366efde8b85, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bdddb7066619c428175746ff4fb2ef, type: 3}
 --- !u!1 &321011711
@@ -924,15 +924,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.344
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.634
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.496
+      value: -3.87
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1030,6 +1030,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f4270e71922034e32a7a7ca17670f809, type: 2}
+    - target: {fileID: 100024, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62e004bba518e4b6683f95fba66c8f25, type: 3}
 --- !u!1 &417286509
@@ -2910,7 +2914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 29bb7905064514356a121cfc01a23921, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.473
+      value: -4.16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 29bb7905064514356a121cfc01a23921, type: 3}
       propertyPath: m_LocalPosition.y
