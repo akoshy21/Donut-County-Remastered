@@ -237,6 +237,8 @@ MonoBehaviour:
   bkRot: {x: 22, y: 207, z: 0}
   miraTB: {fileID: 816201504}
   bkTB: {fileID: 901115522}
+  miraMat: {fileID: 2100000, guid: d227111fb58f11d4f955de2272a48267, type: 2}
+  bkMat: {fileID: 2100000, guid: 8dad3787ba394cd4890b204de760d78a, type: 2}
   txt: {fileID: 1022882634}
   nametag: {fileID: 91733790}
   dots: {fileID: 1774862358}
@@ -292,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16981131, g: 0.15619436, b: 0.15619436, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

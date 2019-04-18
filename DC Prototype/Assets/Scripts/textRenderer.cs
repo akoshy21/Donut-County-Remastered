@@ -33,6 +33,9 @@ public class textRenderer : MonoBehaviour
     public RawImage miraTB;
     public RawImage bkTB;
 
+    public Material miraMat;
+    public Material bkMat;
+
     public Text txt;
     public Text nametag;
     public Text dots;
@@ -49,6 +52,7 @@ public class textRenderer : MonoBehaviour
 
     IEnumerator AnimateText(string line)
     {
+
         int i = 0;
         string str = "";
 
@@ -85,16 +89,17 @@ public class textRenderer : MonoBehaviour
 
     void Update()
     {
-
         if(dialogue[idx].currentChar == mira)
         {
             nametag.text = "Mira";
+            txt.material = miraMat;
             miraTB.enabled = true;
             bkTB.enabled = false;
 
         }else if(dialogue[idx].currentChar == bk)
         {
             nametag.text = "BK";
+            txt.material = bkMat;
             bkTB.enabled = true;
             miraTB.enabled = false;
 
