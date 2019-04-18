@@ -54,9 +54,9 @@ public class textRenderer : MonoBehaviour
 
         while( i < line.Length)
         {
-            txt.text = str;
             str += line[i++];
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.05f);
+            txt.text = str;
         }
     }
 
@@ -77,6 +77,7 @@ public class textRenderer : MonoBehaviour
 
         idx = 0;
         //txt.text = dialogue[idx].text;
+        StartCoroutine(AnimateText(dialogue[idx].text));
 
         myCam.transform.position = miraPos;
         myCam.transform.rotation = Quaternion.Euler(miraRot);
@@ -101,7 +102,6 @@ public class textRenderer : MonoBehaviour
 
         //text progresses with spacebar
         //txt.text = dialogue[idx].text;
-        StartCoroutine(AnimateText(dialogue[idx].text));
 
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -109,6 +109,7 @@ public class textRenderer : MonoBehaviour
             if (idx < length - 1)
             {
                 idx++;
+                StartCoroutine(AnimateText(dialogue[idx].text));
             }
             else
             {
