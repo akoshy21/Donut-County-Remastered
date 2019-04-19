@@ -12,6 +12,8 @@ public class HoleManager : MonoBehaviour
     public GameObject water;
     public Camera cam;
 
+    public AudioClip pop;
+
     //public Vector2 objectHit;
 
     private void Start()
@@ -59,7 +61,10 @@ public class HoleManager : MonoBehaviour
         // scales the hole to the holeSize
         Vector3 modSize = new Vector3(holeSize,0,holeSize);
 
-        transform.localScale += modSize * 0.1f;
+        transform.localScale += modSize * 0.01f;
+
+        this.GetComponent<AudioSource>().clip = pop;
+        this.GetComponent<AudioSource>().Play();
     }
 
     void UpdateColliders()
@@ -76,7 +81,7 @@ public class HoleManager : MonoBehaviour
         // scales the hole to the holeSize
         Vector3 modSize = new Vector3(holeSize, 0, holeSize);
 
-        transform.localScale -= modSize * 0.1f;
+        transform.localScale -= modSize * 0.01f;
     }
 
     //public void ChangeSize(float holeMod)

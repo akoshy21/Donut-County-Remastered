@@ -7,7 +7,7 @@ public class Eatable : MonoBehaviour
     // THIS SCRIPT GOES ON THINGS THAT ARE EATABLE.
 
     // The size of the object; corresponds to the increase in size of the hole
-    public int calories;
+    public float calories;
     // Can it be catapulted?
     public bool launchable;
 
