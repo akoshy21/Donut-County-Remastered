@@ -33,10 +33,15 @@ public class textRenderer : MonoBehaviour
     public RawImage miraTB;
     public RawImage bkTB;
 
+    public Material miraMat;
+    public Material bkMat;
+
     public Text txt;
     public Text nametag;
     public Text dots;
     public int idx;
+
+    public bool complete;
 
     public float speed;
 
@@ -49,14 +54,22 @@ public class textRenderer : MonoBehaviour
 
     IEnumerator AnimateText(string line)
     {
+
         int i = 0;
         string str = "";
 
         while( i < line.Length)
         {
+            dots.enabled = false;
             str += line[i++];
             yield return new WaitForSeconds(0.05f);
             txt.text = str;
+        }
+
+        if(i >= line.Length)
+        {
+            complete = true;
+            dots.enabled = true;
         }
     }
 
@@ -85,16 +98,17 @@ public class textRenderer : MonoBehaviour
 
     void Update()
     {
-
         if(dialogue[idx].currentChar == mira)
         {
             nametag.text = "Mira";
+            txt.material = miraMat;
             miraTB.enabled = true;
             bkTB.enabled = false;
 
         }else if(dialogue[idx].currentChar == bk)
         {
             nametag.text = "BK";
+            txt.material = bkMat;
             bkTB.enabled = true;
             miraTB.enabled = false;
 
@@ -104,10 +118,11 @@ public class textRenderer : MonoBehaviour
         //txt.text = dialogue[idx].text;
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && complete == true)
         {
             if (idx < length - 1)
             {
+                complete = false;
                 idx++;
                 StartCoroutine(AnimateText(dialogue[idx].text));
             }
@@ -135,17 +150,5 @@ public class textRenderer : MonoBehaviour
             }
         }
 
-        if (dialogue[idx + 1] != null)
-        {
-            if (dialogue[idx].currentChar == dialogue[idx + 1].currentChar)
-            {
-                dots.enabled = true;
-            }
-            else
-            {
-                dots.enabled = false;
-            }
-        }
-
-    }
+      }
     }
