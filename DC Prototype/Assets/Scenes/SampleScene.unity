@@ -1151,7 +1151,6 @@ MonoBehaviour:
   hole: {fileID: 7438886}
   gameScene: 1
   start: 1
-  score: 0
   mainCam: {fileID: 534669904}
 --- !u!4 &417286511
 Transform:
@@ -3612,6 +3611,14 @@ PrefabInstance:
     - target: {fileID: 1532947803, guid: 13f219b2eb0224f32aed5e265bede699, type: 3}
       propertyPath: calories
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532947802, guid: 13f219b2eb0224f32aed5e265bede699, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532947806, guid: 13f219b2eb0224f32aed5e265bede699, type: 3}
+      propertyPath: centerOfMass.y
+      value: -0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13f219b2eb0224f32aed5e265bede699, type: 3}
