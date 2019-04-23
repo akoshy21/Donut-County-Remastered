@@ -23,10 +23,12 @@ public class Catapult : MonoBehaviour
         }
 
         // if waterspray is true, then start the water coroutine [~ ln 76]
-        if(waterSpray == true)
+        if (waterSpray == true)
         {
             Debug.Log("SPRAY");
-            StartCoroutine(Water());        
+            StartCoroutine(Water());
+            waterSpray = false;
+            manager.waterFill = false;
         }
     }
     
@@ -84,7 +86,5 @@ public class Catapult : MonoBehaviour
         waterCyl.SetActive(true);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
-        waterSpray = false;
-        manager.waterFill = false;
     }
 }

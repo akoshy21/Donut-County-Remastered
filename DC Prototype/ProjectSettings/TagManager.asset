@@ -9,6 +9,7 @@ TagManager:
   - water
   - introUI
   - surface
+  - gumballHandle
   layers:
   - Default
   - TransparentFX
