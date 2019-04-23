@@ -54,6 +54,8 @@ public class HoleManager : MonoBehaviour
         {
             water.SetActive(true);
         }
+
+        StartCoroutine(updateCol());
     }
 
     public void Grow()
@@ -73,6 +75,19 @@ public class HoleManager : MonoBehaviour
         {
             col.enabled = false;
             col.enabled = true;
+        }
+    }
+
+    public IEnumerator updateCol()
+    {
+        yield return new WaitForSeconds(1);
+        foreach (Collider col in Physics.OverlapSphere(transform.position, this.transform.localScale.x / 2.1f))
+        {if (col.gameObject.tag.Equals("eatable"))
+            {
+            col.enabled = false;
+            col.enabled = true;
+            
+            }
         }
     }
 
