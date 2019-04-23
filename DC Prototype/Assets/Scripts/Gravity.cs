@@ -14,32 +14,24 @@ public class Gravity : MonoBehaviour
     {
         foreach (Collider collider in Physics.OverlapSphere(transform.position, gravRadius))
         {
-            //check distance from target
+            //check distance from target to the hole
             Vector3 forceDirection = transform.position - collider.transform.position;
 
-            //apply gravity on object
+            //apply gravity on object as a force in the direction of the hole
             if (collider.gameObject.tag.Equals("eatable") && collider.gameObject.GetComponent<Eatable>().magnetic)
             {
                 collider.gameObject.GetComponent<Rigidbody>().AddForce(forceDirection.normalized * gravForce * Time.fixedDeltaTime);
-
-                //collider.gameObject.GetComponent<Rigidbody>().centerOfMass = transform.position;
-                //Debug.Log("tug: " + collider.gameObject.name + " " + forceDirection);
-
                 attracted.Add(collider);
             }
         }
-
-        //foreach (Collider col in attracted)
-        //{
-        //    if(Vector3.Distance(col.gameObject.transform.position, transform.position) > gravRadius)
-        //    {
-        //        GetComponent<Collider>().gameObject.GetComponent< Rigidbody > ().centerOfMass = GetComponent<Collider>().gameObject.GetComponent<Eatable>().com;
-        //    }
-        //}
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        col.gameObject.GetComponent<Eatable>().magnetic = false;
+        // check if object is eatable; if so, set its magnetic quality to false on enter.
+        if (col.gameObject.tag.Equals("eatable"))
+        {
+            col.gameObject.GetComponent<Eatable>().magnetic = false;
+        }
     }
 }

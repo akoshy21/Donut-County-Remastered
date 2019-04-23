@@ -11,41 +11,48 @@ public class Catapult : MonoBehaviour
 
     void Start()
     {
-        manager = GetComponent<HoleManager>();   
+        manager = GetComponent<HoleManager>();  // set manager to HoleManager component
     }
 
     void Update()
     {
+        // on click, liftoff
         if (Input.GetMouseButtonDown(0))
         {
             Liftoff();
         }
 
+        // if waterspray is true, then start the water coroutine [~ ln 76]
         if(waterSpray == true)
         {
+            Debug.Log("SPRAY");
             StartCoroutine(Water());        
         }
     }
     
     private void Liftoff()
     {
+        // get the last object in the hole.
         for (int i = manager.insideHole.Count - 1; i >= 0; i--)
         {
+            // the current object is that object at the last index (ie. index of i)
             GameObject current = manager.insideHole[i];
-            if (current.GetComponent<Eatable>().launchable)
+
+            // check if object is eatable & launchable or water
+            if (current.GetComponent<Eatable>() != null && current.GetComponent<Eatable>().launchable)
             {
-                if (current.tag.Equals("water"))
-                {
-                    waterSpray = true;
-                    manager.insideHole.Remove(current);
-                }
-                else
-                {
-                    LaunchObject(current);
-                    current.layer = 9;
-                }
-                break;
+                // launch object, and set the objects layer to above; [~ln 60]
+                LaunchObject(current);
+                current.layer = 9;
+
             }
+            else if(current.tag.Equals("water"))
+            {
+                // set waterspray to true, remove the last entry in hole
+                waterSpray = true;
+                manager.insideHole.Remove(current);
+            }
+            break;
         }
     }
 
@@ -53,13 +60,15 @@ public class Catapult : MonoBehaviour
     {
         // turn the game object back on
         obj.gameObject.SetActive(true);
+        // set its magnetic quality back to true when it exits
+        obj.GetComponent<Eatable>().magnetic = true;
 
         //set its position and rotation to a resting state
         obj.transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         obj.transform.rotation = Quaternion.Euler(0, 0, 0);
         obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        //yeet that bitch
+        //launch the object
         obj.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
 
         //change the hole accordingly
@@ -70,9 +79,12 @@ public class Catapult : MonoBehaviour
 
     public IEnumerator Water()
     {
+        // set the water cylinder to active, wait 3 seconds, then de-activate
+        // the water cylinder & set the waterfill to false
         waterCyl.SetActive(true);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
         waterSpray = false;
+        manager.waterFill = false;
     }
 }

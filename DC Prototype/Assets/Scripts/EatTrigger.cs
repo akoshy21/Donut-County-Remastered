@@ -10,13 +10,15 @@ public class EatTrigger : MonoBehaviour
 
     private void Start()
     {
+        // on start, set the hole to the hole and hole manager to its hole manager component
         hole = GameObject.FindGameObjectWithTag("Hole");
         hm = hole.GetComponent<HoleManager>();
     }
 
     private void Update()
     {
-        // finds all eatable objects and checks if their y is lower than the eat point (-5.11).
+        // finds all eatable objects and checks if their y is lower than the eat point (-5.11)
+        // and then run Eat() [~ln 31]
         foreach(GameObject cal in GameObject.FindGameObjectsWithTag("eatable"))
         {
             if(cal.GetComponent<Transform>().position.y <= -5.11f)
@@ -28,6 +30,7 @@ public class EatTrigger : MonoBehaviour
 
     void Eat(GameObject obj)
     {
+        // add the calories to hole size & grow the hole [HoleManager, ~ln 66]
         hm.holeSize += obj.GetComponent<Eatable>().calories;
         hm.Grow();
 
@@ -43,6 +46,7 @@ public class EatTrigger : MonoBehaviour
         }
         else
         {
+            // if the object isnt launchable, just destroy it
             Destroy(obj);
         }
     }
