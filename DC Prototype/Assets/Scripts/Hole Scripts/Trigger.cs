@@ -28,7 +28,7 @@ public class Trigger : MonoBehaviour
         {
             // swaps object colliding with trigger's layer to the layertoenter
             col.gameObject.layer = layerToEnter;
-            Debug.Log("enter hole");
+            //Debug.Log("enter hole");
 
         }
     }

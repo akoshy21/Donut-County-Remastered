@@ -8,32 +8,25 @@ public class GumballTrigger : MonoBehaviour
     public bool hit;
     public GameObject balloon;
     public float rotationAmount;
-    public GameObject spinner;
 
     void Update()
     {
         if (rotationAmount >= rotationStep)
         {
-            spinner.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
+            this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
             rotationAmount -= rotationStep;
         }
     }
 
     public void SpinAndDispense()
     {
-        rotationAmount += 4000;
+        rotationAmount += 400;
         Instantiate(balloon);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("HIT " + other.gameObject.name);
-        SpinAndDispense();
     }
 
     private void onCollisionEnter(Collider other)
     {
-        Debug.Log("HIT " + other.gameObject.name);
-        SpinAndDispense();
+            Debug.Log("HIT " + other.gameObject.name);
+            SpinAndDispense();
     }
 }
