@@ -8,9 +8,11 @@ public class Catapult : MonoBehaviour
     public float launchForce;
     public GameObject waterCyl;
     public bool waterSpray;
+    public GameObject CatapultModel;
 
     void Start()
     {
+        CatapultModel.GetComponent<Animator>().enabled = false;
         manager = GetComponent<HoleManager>();  // set manager to HoleManager component
     }
 
@@ -20,6 +22,10 @@ public class Catapult : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Liftoff();
+        }
+        if(manager.insideHole.Count > 0)
+        {
+            CatapultModel.SetActive(true);
         }
 
         // if waterspray is true, then start the water coroutine [~ ln 76]
@@ -34,6 +40,7 @@ public class Catapult : MonoBehaviour
     
     private void Liftoff()
     {
+        
         // get the last object in the hole.
         for (int i = manager.insideHole.Count - 1; i >= 0; i--)
         {
@@ -43,6 +50,9 @@ public class Catapult : MonoBehaviour
             // check if object is eatable & launchable or water
             if (current.GetComponent<Eatable>() != null && current.GetComponent<Eatable>().launchable)
             {
+                CatapultModel.GetComponent<Animator>().enabled = true;
+                CatapultModel.GetComponent<Animator>().Play(0);
+                //CatapultModel.GetComponent<Animator>().
                 // launch object, and set the objects layer to above; [~ln 60]
                 LaunchObject(current);
                 current.layer = 9;
@@ -50,6 +60,11 @@ public class Catapult : MonoBehaviour
             }
             else if(current.tag.Equals("water"))
             {
+                if (manager.insideHole.Count <= 0)
+                {
+                    CatapultModel.SetActive(false);
+                }
+
                 // set waterspray to true, remove the last entry in hole
                 waterSpray = true;
                 manager.insideHole.Remove(current);
