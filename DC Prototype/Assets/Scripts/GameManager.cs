@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public bool gameScene;
     public bool start = true;
+    public bool paused = false;
 
     public Camera mainCam;
 
@@ -57,5 +58,23 @@ public class GameManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync("StartAdditive");
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused)
+            {
+                SceneManager.LoadScene("PauseScreen", LoadSceneMode.Additive);
+                paused = true;
+            }
+            else
+            {
+                SceneManager.UnloadSceneAsync("PauseScreen");
+            }
+        }
+    }
+
+    private void LoadPause()
+    {
+        
     }
 }

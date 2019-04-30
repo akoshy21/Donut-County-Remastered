@@ -11,26 +11,17 @@ public class HoleManager : MonoBehaviour
     public bool waterFill;
     public GameObject water;
     public Camera cam;
+    public GameObject holeLead;
 
     public AudioClip pop;
+
+
+    private Vector3 change;
 
 
     // Update is called once per frame
     void Update()
     {
-        // send out a ray to check where the mouse is and move the hole toward that point based on the speed mod
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-        // Default layer ensures that only the floor impacts our hole position
-        if (Physics.Raycast(ray, out hit, 100, 1 << LayerMask.NameToLayer("Default")))
-        {
-            Vector3 objectHit = new Vector3(hit.point.x,-0.12f,hit.point.z);
-            objectHit.y = this.transform.position.y; // y is preset by us.
-
-            transform.position = Vector3.MoveTowards(this.transform.position, objectHit, speedMod);
-        }
-
         // if waterFill is true, then have the water object in the hole set to true.
         if(waterFill)
         {
@@ -43,6 +34,26 @@ public class HoleManager : MonoBehaviour
 
         // coroutine UpdateCol runs [~ ln 68]
         StartCoroutine(UpdateCol());
+
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = holeLead.transform.position;
+        //float dist = Vector3.Distance(holeLead.transform.position, this.transform.position);
+
+        //if (Mathf.Abs(dist) > 0.08f)
+        //{
+        //    transform.position = Vector3.MoveTowards(this.transform.position, holeLead.transform.position, 80f * Time.deltaTime);
+        //}
+        //else if (Mathf.Abs(dist) > 0.03f)
+        //{
+        //    transform.position = Vector3.MoveTowards(this.transform.position, holeLead.transform.position, 13f * Time.deltaTime);
+        //}
+        //else if (Mathf.Abs(dist) > 0.01f)
+        //{
+        //    transform.position = Vector3.MoveTowards(this.transform.position, holeLead.transform.position, 1f * Time.deltaTime);
+        //}
     }
 
     public void Grow()
