@@ -25,7 +25,7 @@ public class WaterGeyser : MonoBehaviour
             waterTimer = 0f; 
         }
 
-        if(waterTimer >= 3.5f){
+        if(waterTimer >= 2.5f){
             waterOn = false; 
         }
     }
