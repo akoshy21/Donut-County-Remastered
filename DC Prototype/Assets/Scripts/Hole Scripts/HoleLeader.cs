@@ -6,11 +6,12 @@ public class HoleLeader : MonoBehaviour
 {
     public Camera cam;
     public float speedMod;
+    public GameObject hole;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = GameObject.FindWithTag("Hole").transform.position;
+        transform.position = hole.transform.position;
 
     }
 
