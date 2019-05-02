@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class FlowerRotation : MonoBehaviour
 {
-    public float rotation;
+    private RectTransform myRect;
+    public float speed;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        myRect = GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,0,rotation);
+        myRect.Rotate(new Vector3( 0, 0, (speed * Time.deltaTime)));
     }
 }
