@@ -6,15 +6,15 @@ public class Prisms : MonoBehaviour
 {
     private Transform myT;
     public float speed, speed1, speed2;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         myT = GetComponent<Transform>();
+
+        //speed for each prism is random btw speed 1 & speed 2 
         speed = Random.Range(speed1, speed2);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         myT.Rotate(new Vector3((speed * Time.deltaTime), (speed * Time.deltaTime), (speed * Time.deltaTime)));

@@ -52,9 +52,9 @@ public class textRenderer : MonoBehaviour
 
     private int length;
 
+    //text appears letter by letter
     IEnumerator AnimateText(string line)
     {
-
         int i = 0;
         string str = "";
 
@@ -66,6 +66,7 @@ public class textRenderer : MonoBehaviour
             txt.text = str;
         }
 
+        //if the line is complete show the "..."
         if(i >= line.Length)
         {
             complete = true;
@@ -75,20 +76,22 @@ public class textRenderer : MonoBehaviour
 
     void Start()
     {
-
+        //pulls dialogue from CutsceneScript & assigns character
         d1 = new Dialogue(CutsceneScript.instance.l1, mira);
         d2 = new Dialogue(CutsceneScript.instance.l2, bk);
         d3 = new Dialogue(CutsceneScript.instance.l3, bk);
         d4 = new Dialogue(CutsceneScript.instance.l4, mira);
 
+        //adds each line to dialogue list
         dialogue.Add(d1);
         dialogue.Add(d2);
         dialogue.Add(d3);
         dialogue.Add(d4);
 
+        //num of lines in dialogue
         length = 4;
-
         idx = 0;
+
         //txt.text = dialogue[idx].text;
         StartCoroutine(AnimateText(dialogue[idx].text));
 
@@ -98,6 +101,7 @@ public class textRenderer : MonoBehaviour
 
     void Update()
     {
+        //change name/textbox based on character
         if(dialogue[idx].currentChar == mira)
         {
             nametag.text = "Mira";
@@ -113,13 +117,12 @@ public class textRenderer : MonoBehaviour
             miraTB.enabled = false;
 
         }
-
+      
         //text progresses with spacebar
         //txt.text = dialogue[idx].text;
-
-
         if (Input.GetKeyDown(KeyCode.Space) && complete == true)
         {
+            //while there are still lines left in dialogue list
             if (idx < length - 1)
             {
                 complete = false;
