@@ -9,12 +9,16 @@ ModelImporter:
     100006: Empty.001
     100008: Empty.002
     100010: Empty.003
+    100012: Cube.003
+    100014: Cube.001
     400000: Cube.002
     400002: //RootNode
     400004: Empty
     400006: Empty.001
     400008: Empty.002
     400010: Empty.003
+    400012: Cube.003
+    400014: Cube.001
     2100000: Dark Blue
     2100002: Light Blue
     2100004: Dark Green
@@ -27,9 +31,28 @@ ModelImporter:
     2100018: Slide
     2100020: Water
     2100022: Slide Inside
+    2100024: still water
+    2100026: Dark Blue.001
+    2100028: Light Blue.001
+    2100030: Dark Green.001
+    2100032: Darkest Green.001
+    2100034: Light Green.001
+    2100036: Light Orange.001
+    2100038: Dark Orange.001
+    2100040: Yellow.001
+    2100042: Black.001
+    2100044: Slide.001
+    2100046: Water.001
+    2100048: Slide Inside.001
     2300000: Cube.002
+    2300002: Cube.003
+    2300004: Cube.001
     3300000: Cube.002
+    3300002: Cube.003
+    3300004: Cube.001
     4300000: Cube.002
+    4300002: Cube.003
+    4300004: Cube.001
   externalObjects: {}
   materials:
     importMaterials: 1
