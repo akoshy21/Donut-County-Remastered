@@ -48,4 +48,8 @@ public class HoleLeader : MonoBehaviour
         }
 
     }
+    private void OnCollisionEnter(Collision col)
+    {
+        Debug.Log(col.gameObject.name);
+    }
 }

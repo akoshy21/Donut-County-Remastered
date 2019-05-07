@@ -7,26 +7,44 @@ public class GumballTrigger : MonoBehaviour
     public float rotationStep;
     public bool hit;
     public GameObject balloon;
+    public GameObject spinner;
     public float rotationAmount;
+    GameObject lastHit;
+
 
     void Update()
     {
         if (rotationAmount >= rotationStep)
         {
-            this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
-            rotationAmount -= rotationStep;
+            spinner.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
+            rotationAmount -= rotationStep * Time.deltaTime;
         }
     }
 
     public void SpinAndDispense()
     {
-        rotationAmount += 400;
+        rotationAmount += 80;
         Instantiate(balloon);
     }
 
-    private void onCollisionEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-            Debug.Log("HIT " + other.gameObject.name);
-            SpinAndDispense();
+        if (!hit)
+        {
+            if (col.gameObject.tag.Equals("eatable"))
+            {
+                hit = true;
+                SpinAndDispense();
+                Debug.Log("UH. STUFF");
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.transform.position.y < 0.63)
+        {
+            hit = false;
+        }
     }
 }
