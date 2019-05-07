@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class GumballTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float rotationStep;
+    public bool hit;
+    public GameObject balloon;
+    public float rotationAmount;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (rotationAmount >= rotationStep)
+        {
+            this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
+            rotationAmount -= rotationStep;
+        }
+    }
+
+    public void SpinAndDispense()
+    {
+        rotationAmount += 400;
+        Instantiate(balloon);
+    }
+
+    private void onCollisionEnter(Collider other)
+    {
+            Debug.Log("HIT " + other.gameObject.name);
+            SpinAndDispense();
     }
 }

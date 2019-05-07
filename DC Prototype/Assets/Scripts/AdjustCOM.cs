@@ -12,3 +12,4 @@ public class AdjustCOM : MonoBehaviour
         this.GetComponent<Rigidbody>().centerOfMass = centerOfMass;
     }
 }
+
