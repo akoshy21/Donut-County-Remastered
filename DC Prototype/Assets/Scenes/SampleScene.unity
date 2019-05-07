@@ -294,6 +294,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &19115177
 Rigidbody:
@@ -326,6 +328,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &59609903
 Rigidbody:
@@ -441,6 +445,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &106133320
 Rigidbody:
@@ -565,6 +571,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &131472832
 Rigidbody:
@@ -649,7 +657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 31.5, y: -30, z: 0}
 --- !u!1 &187096534
 GameObject:
@@ -965,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a35d32c538a854741b394ae1a9de7fb0, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a35d32c538a854741b394ae1a9de7fb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1035,6 +1043,8 @@ MonoBehaviour:
   calories: 0.1
   launchable: 1
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &228509430
 Rigidbody:
@@ -1127,7 +1137,7 @@ Transform:
   m_LocalScale: {x: 0.25517, y: 0.25517, z: 0.25517}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &232988308
 GameObject:
@@ -1165,6 +1175,8 @@ MonoBehaviour:
   calories: 0.1
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &232988310
 Rigidbody:
@@ -1252,7 +1264,7 @@ Transform:
   m_LocalScale: {x: 2.4205425, y: 0.1030603, z: 1.5649521}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &274156764
 MonoBehaviour:
@@ -1269,6 +1281,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &274156765
 Rigidbody:
@@ -1331,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52bdddb7066619c428175746ff4fb2ef, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 52bdddb7066619c428175746ff4fb2ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1351,6 +1365,38 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f4f0bbd61d1b406b9b22366efde8b85, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52bdddb7066619c428175746ff4fb2ef, type: 3}
+--- !u!1 &304071922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304071923}
+  m_Layer: 0
+  m_Name: Flume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304071923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304071922}
+  m_LocalRotation: {x: -0, y: -0.8444771, z: -0, w: 0.53559166}
+  m_LocalPosition: {x: -1, y: 8.720001, z: 20.4}
+  m_LocalScale: {x: 3.2908332, y: 3.2908301, z: 3.2908332}
+  m_Children:
+  - {fileID: 949393101}
+  - {fileID: 521955795}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -115.232, z: 0}
 --- !u!1 &321011711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,7 +1554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8e6c23bce1f134c36b4b63510bce433f, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8e6c23bce1f134c36b4b63510bce433f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1643,6 +1689,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &376050194
 Rigidbody:
@@ -2468,7 +2516,7 @@ Transform:
   - {fileID: 1824305404}
   - {fileID: 1791688492}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &400928798
 Transform:
@@ -2531,7 +2579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &417286512
 AudioSource:
@@ -2665,6 +2713,8 @@ MonoBehaviour:
   calories: 0.1
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &436290878
 Rigidbody:
@@ -2752,7 +2802,7 @@ Transform:
   m_LocalScale: {x: 2.4205425, y: 0.25517, z: 0.47095662}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453199048
 GameObject:
@@ -2843,7 +2893,7 @@ Transform:
   m_LocalScale: {x: 27.231014, y: 0.2166031, z: 34.118633}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &488477784
 PrefabInstance:
@@ -3058,13 +3108,15 @@ MonoBehaviour:
   calories: 1
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!1001 &521955794
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 304071923}
     m_Modifications:
     - target: {fileID: 100002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_Name
@@ -3084,15 +3136,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0086007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.72
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.753
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3100,7 +3152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.90107256
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3108,11 +3160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.43366838
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3128,15 +3180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.2908301
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.2908301
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.2908301
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 61fcfc51dff7ac844a1c227e2b560420, type: 3}
       propertyPath: m_Materials.Array.data[4]
@@ -3350,7 +3402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534669902
 GameObject:
@@ -3363,9 +3415,9 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669908}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3417,7 +3469,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -3430,13 +3482,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8, y: 12.82914, z: -50.8}
+  m_LocalRotation: {x: 0.041060217, y: 0.6625514, z: -0.026863348, w: 0.74740756}
+  m_LocalPosition: {x: -55.76, y: 21.85, z: 21.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 12.909, y: 67.381004, z: 2.8500001}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 5.565, y: 83.152, z: 0.82100004}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3446,34 +3498,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 534669902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 28a52851c228847c69ac989b7193d732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  camSpeed: 2
+  triggerOne: 0
+  triggerTwo: 0
+  triggerThree: 0
+  triggerFour: 0
+  waypoints:
+  - {x: -9.6, y: 15.31, z: -13.55}
+  - {x: 24.8, y: 14.5, z: 8.1}
+  - {x: -65.71, y: 23.15, z: 7.49}
+  - {x: 0, y: 0, z: 0}
+  rotations:
+  - {x: 0, y: 42.252, z: 0}
+  - {x: 0, y: 90.62701, z: 0}
+  - {x: 5.601, y: 69.48901, z: -0.515}
+  - {x: 0, y: 0, z: 0}
 --- !u!95 &534669907
 Animator:
   serializedVersion: 3
@@ -3527,6 +3569,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &564062056
 Rigidbody:
@@ -3628,7 +3672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 500fd7e51c883401b9874753af245d1c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 500fd7e51c883401b9874753af245d1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3768,6 +3812,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &662480857
 Rigidbody:
@@ -3881,6 +3927,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &706124969
 Rigidbody:
@@ -3913,6 +3961,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &729160561
 Rigidbody:
@@ -4026,6 +4076,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &838203649
 Rigidbody:
@@ -4064,6 +4116,8 @@ MonoBehaviour:
   calories: 4
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!1 &853626222
 GameObject:
@@ -4247,7 +4301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.12095, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &884751682
 Rigidbody:
@@ -4470,7 +4524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 379eab86a2f93c84ea401527f9803718, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 379eab86a2f93c84ea401527f9803718, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4527,6 +4581,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 379eab86a2f93c84ea401527f9803718,
     type: 3}
   m_PrefabInstance: {fileID: 942995545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &949393101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195,
+    type: 3}
+  m_PrefabInstance: {fileID: 1434025712}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &989049104
 GameObject:
@@ -4620,7 +4680,7 @@ RectTransform:
   m_Children:
   - {fileID: 2115746149}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4912,6 +4972,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1011867131
 Rigidbody:
@@ -5051,6 +5113,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1177145959
 Rigidbody:
@@ -5132,6 +5196,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1227754076
 Rigidbody:
@@ -5164,6 +5230,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1296978814
 Rigidbody:
@@ -5232,6 +5300,8 @@ MonoBehaviour:
   calories: 2
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!1 &1336455084
 GameObject:
@@ -5438,6 +5508,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1363413904
 Rigidbody:
@@ -5575,6 +5647,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1430482873
 Rigidbody:
@@ -5597,7 +5671,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 304071923}
     m_Modifications:
     - target: {fileID: 100002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_Name
@@ -5605,35 +5679,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.75
+      value: 0.44793636
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: -2.4188435
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.67
+      value: 4.9853387
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.003326586
+      value: 0.00508636
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.43401766
+      value: 0.99998623
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.004043764
+      value: -0.0012438429
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.90088916
+      value: -0.00039425492
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5649,15 +5723,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.29083
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.29083
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.29083
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5812,7 +5886,7 @@ Transform:
   m_LocalScale: {x: 0.25517, y: 0.25517, z: 0.25517}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1440820274
 MonoBehaviour:
@@ -5829,6 +5903,8 @@ MonoBehaviour:
   calories: 0.1
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!1 &1479602660
 GameObject:
@@ -5866,6 +5942,8 @@ MonoBehaviour:
   calories: 1
   launchable: 0
   magnetic: 0
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1479602662
 Rigidbody:
@@ -5954,7 +6032,7 @@ Transform:
   m_Children:
   - {fileID: 321011712}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1562406599
 PrefabInstance:
@@ -7293,7 +7371,7 @@ Transform:
   - {fileID: 1621295692}
   - {fileID: 1621296050}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 49.287003, z: 0}
 --- !u!4 &1621295680
 Transform:
@@ -8277,7 +8355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a05be33c89ab24d43a15f5ae2778117d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a05be33c89ab24d43a15f5ae2778117d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8402,7 +8480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c5eea66355f6b4d6d8e49798b2dd5193, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c5eea66355f6b4d6d8e49798b2dd5193, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8495,6 +8573,8 @@ MonoBehaviour:
   calories: 0.1
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!64 &1788753732
 MeshCollider:
@@ -8815,6 +8895,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1882996647
 Rigidbody:
@@ -8908,7 +8990,7 @@ Transform:
   m_LocalScale: {x: 1.0746, y: 1.0746, z: 1.0746}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2010493255
 MonoBehaviour:
@@ -8925,6 +9007,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &2010493256
 Rigidbody:
@@ -8957,6 +9041,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &2013800074
 Rigidbody:
@@ -9023,7 +9109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 575de7995ddeb45f0a38e6763b817164, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 575de7995ddeb45f0a38e6763b817164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9108,7 +9194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 29bb7905064514356a121cfc01a23921, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 29bb7905064514356a121cfc01a23921, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9204,7 +9290,7 @@ PrefabInstance:
     - target: {fileID: 5710548368134537507, guid: e291f40389182374c84893670b38c52b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5710548368134537507, guid: e291f40389182374c84893670b38c52b,
         type: 3}
@@ -9353,6 +9439,8 @@ MonoBehaviour:
   calories: 5
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &2086726184
 Rigidbody:
@@ -9533,6 +9621,8 @@ MonoBehaviour:
   calories: 3
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!64 &1426034412743220150
 MeshCollider:
@@ -9589,6 +9679,8 @@ MonoBehaviour:
   calories: 2
   launchable: 0
   magnetic: 1
+  camTrigger: 0
+  camTriggerNum: 0
   com: {x: 0, y: 0, z: 0}
 --- !u!54 &1426034412914269703
 Rigidbody:
