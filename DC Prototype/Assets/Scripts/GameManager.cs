@@ -9,10 +9,15 @@ public class GameManager : MonoBehaviour
     public GameObject hole;
 
     public bool gameScene;
-    public bool start = true;
+    public bool start;
     public bool paused = false;
 
     public Camera mainCam;
+
+    public GameObject names;
+
+    public bool intro = false;
+    public bool oof = false;
 
     // makes the GameManager static, and stops it from being destroyed.
     private void Awake()
@@ -32,8 +37,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (oof)
+        {
+            StartGame();
+        }
+
+        if(intro)
+        {
+            StartCoroutine(IntroSequence());
+        }
+
         // check if its start and get the mouse button
-        if(start && Input.GetMouseButton(0))
+        if (start && Input.GetMouseButton(0))
         {
             // raycast to see where the mouse is at
             RaycastHit hit;
@@ -46,6 +61,7 @@ public class GameManager : MonoBehaviour
                 // move the hole to the mouse point
                 hole.GetComponent<Transform>().position = hitPos;
             }
+            mainCam.GetComponent<CameraMover>().TriggerSelect(3);
 
             // turn the hole on, set start to false as we've started
             hole.SetActive(true);
@@ -73,8 +89,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LoadPause()
+    void StartGame()
     {
-        
+        names.SetActive(false);
+        oof = false;
+        this.GetComponent<AudioSource>().Play();
+        intro = true;
+    }
+
+    IEnumerator IntroSequence()
+    {
+        intro = false;
+        yield return new WaitForSeconds(2);
+        mainCam.GetComponent<CameraMover>().TriggerSelect(1);
+        Debug.Log("MOVE OVER");
+        yield return new WaitForSeconds(4);
+        mainCam.GetComponent<CameraMover>().TriggerSelect(2);
+        SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
+        start = true;
+
     }
 }

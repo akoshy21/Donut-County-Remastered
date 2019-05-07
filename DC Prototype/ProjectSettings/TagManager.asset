@@ -11,6 +11,8 @@ TagManager:
   - surface
   - gumballHandle
   - castleBits
+  - intro
+  - names
   layers:
   - Default
   - TransparentFX

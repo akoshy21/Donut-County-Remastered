@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: f128d352ecc6d46e78168539c917e586
+  - enabled: 1
+    path: Assets/Scenes/PauseScreen.unity
+    guid: 6f6e8b1ec9ed4d8428057ab683abc4b2
+  - enabled: 1
+    path: Assets/Scenes/StartAdditive.unity
+    guid: 3defeda4cb99443f5b099e45453cf530
   m_configObjects: {}

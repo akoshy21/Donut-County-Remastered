@@ -43,4 +43,29 @@ public class CameraMover : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, newPos,camSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(newRot), Time.deltaTime * camSpeed);
     }
+
+    public void TriggerSelect(int num)
+    {
+        switch(num)
+        {
+            case 1:
+                triggerOne = true;
+                triggerTwo = triggerThree = triggerFour = false;
+                break;
+            case 2:
+                triggerTwo = true;
+                triggerOne = triggerThree = triggerFour = false;
+                break;
+            case 3:
+                triggerThree = true;
+                triggerTwo = triggerOne = triggerFour = false;
+                break;
+            case 4:
+                triggerFour = true;
+                triggerTwo = triggerOne = triggerThree = false;
+                break;
+            default:
+                break;
+        } 
+    }
 }
