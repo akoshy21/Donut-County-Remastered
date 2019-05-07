@@ -128,7 +128,10 @@ public class textRenderer : MonoBehaviour
             }
             else
             {
+
                 SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
+
             }
         }
 
