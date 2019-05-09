@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public bool intro = false;
     public bool oof = false;
+    public bool cutscene = true;
+
+    public GameObject dialogueCanvas;
 
     // makes the GameManager static, and stops it from being destroyed.
     private void Awake()
@@ -37,12 +40,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (oof)
+        if (oof && SceneManager.GetActiveScene().name.Equals("SampleScene"))
         {
+            mainCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            hole = GameObject.FindWithTag("Hole");
             StartGame();
+            dialogueCanvas = null;
+            StartCoroutine(dialogueCanvas.GetComponent<Faded>().FadeImage(true));
+            names = null;
+        }
+        else if(!cutscene)
+        {
+            names.SetActive(false);
+            dialogueCanvas.GetComponent<textRenderer>().enabled = true;
+            cutscene = true;
         }
 
-        if(intro)
+        if (intro)
         {
             StartCoroutine(IntroSequence());
         }
@@ -91,7 +105,6 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        names.SetActive(false);
         oof = false;
         this.GetComponent<AudioSource>().Play();
         intro = true;
@@ -108,5 +121,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
         start = true;
 
+    }
+
+    public void MainScene()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

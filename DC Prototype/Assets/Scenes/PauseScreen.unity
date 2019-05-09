@@ -716,6 +716,8 @@ GameObject:
   - component: {fileID: 217480709}
   - component: {fileID: 217480711}
   - component: {fileID: 217480710}
+  - component: {fileID: 217480712}
+  - component: {fileID: 217480713}
   m_Layer: 5
   m_Name: settings
   m_TagString: Untagged
@@ -779,6 +781,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217480708}
   m_CullTransparentMesh: 0
+--- !u!114 &217480712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217480708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 217480710}
+          m_MethodName: SetNativeSize
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &217480713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217480708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1001 &243678289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3616,6 +3663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImg: {fileID: 1743159104}
+  myScene: 
 --- !u!1 &783639999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3693,7 @@ RectTransform:
   m_GameObject: {fileID: 783639999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4609263, y: 0.46092713, z: 0.46092713}
+  m_LocalScale: {x: 0.4559727, y: 0.45597354, z: 0.45597354}
   m_Children: []
   m_Father: {fileID: 217480709}
   m_RootOrder: 1
@@ -3668,6 +3716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImg: {fileID: 217480709}
+  myScene: 
 --- !u!114 &783640002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,6 +4355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImg: {fileID: 1823894686}
+  myScene: 
 --- !u!114 &994262815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7973,6 +8023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImg: {fileID: 1268948892}
+  myScene: 
 --- !u!114 &1732209944
 MonoBehaviour:
   m_ObjectHideFlags: 0

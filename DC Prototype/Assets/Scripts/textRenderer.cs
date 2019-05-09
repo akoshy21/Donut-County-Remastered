@@ -41,6 +41,8 @@ public class textRenderer : MonoBehaviour
     public Text dots;
     public int idx;
 
+    public GameObject fader;
+
     public bool complete;
 
     public float speed;
@@ -102,14 +104,14 @@ public class textRenderer : MonoBehaviour
     void Update()
     {
         //change name/textbox based on character
-        if(dialogue[idx].currentChar == mira)
+        if (dialogue[idx].currentChar == mira)
         {
             nametag.text = "Mira";
             txt.material = miraMat;
             miraTB.enabled = true;
             bkTB.enabled = false;
 
-        }else if(dialogue[idx].currentChar == bk)
+        } else if (dialogue[idx].currentChar == bk)
         {
             nametag.text = "BK";
             txt.material = bkMat;
@@ -117,10 +119,10 @@ public class textRenderer : MonoBehaviour
             miraTB.enabled = false;
 
         }
-      
+
         //text progresses with spacebar
         //txt.text = dialogue[idx].text;
-        if (Input.GetKeyDown(KeyCode.Space) && complete == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))&& complete == true)
         {
             //while there are still lines left in dialogue list
             if (idx < length - 1)
@@ -131,10 +133,7 @@ public class textRenderer : MonoBehaviour
             }
             else
             {
-
-                SceneManager.LoadScene("SampleScene");
-                SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
-
+                GameManager.manager.MainScene();
             }
         }
 
@@ -157,4 +156,4 @@ public class textRenderer : MonoBehaviour
         }
 
       }
-    }
+}

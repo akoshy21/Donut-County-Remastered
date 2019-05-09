@@ -1,16 +1,15 @@
 fileFormatVersion: 2
-guid: 29bb7905064514356a121cfc01a23921
+guid: cd46027116cc843a5860386620a8fc86
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: Material.001
-    2100004: Material.002
+    2100000: dark
+    2100002: light
     2300000: //RootNode
     3300000: //RootNode
-    4300000: fence
+    4300000: stool
   externalObjects: {}
   materials:
     importMaterials: 1

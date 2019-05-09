@@ -10,8 +10,6 @@ public class Eatable : MonoBehaviour
 
     public bool launchable; // Can it be catapulted?
     public bool magnetic = true; // can the hole's artificial gravity affect it.
-    public bool camTrigger;
-    public int camTriggerNum;
 
     public Vector3 com; // what is the object's center of mass
 

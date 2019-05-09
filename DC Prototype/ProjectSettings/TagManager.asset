@@ -13,6 +13,7 @@ TagManager:
   - castleBits
   - intro
   - names
+  - fader
   layers:
   - Default
   - TransparentFX

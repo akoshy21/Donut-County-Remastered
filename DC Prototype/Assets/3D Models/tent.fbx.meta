@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 29bb7905064514356a121cfc01a23921
+guid: 6b5e1305d88994a7e846299a1b7b998d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: Material.001
-    2100004: Material.002
+    2100000: blue
+    2100002: purple
+    2100004: inside
     2300000: //RootNode
     3300000: //RootNode
-    4300000: fence
+    4300000: Tent
   externalObjects: {}
   materials:
     importMaterials: 1
