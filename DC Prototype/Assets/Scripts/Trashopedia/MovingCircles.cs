@@ -13,13 +13,15 @@ public class MovingCircles : MonoBehaviour
     public List<Vector3> pos = new List<Vector3>();
     public List<GameObject> objs = new List<GameObject>();
 
+    private int first = 9;
+
     void Start()
     {
         int j = 0;
 
-        for(int i = 6; i < 20; i++)
+        for(int i  = first; i < 20; i++)
         {   
-            Debug.Log("obj" + j + "is at pos" + i);
+            Debug.Log("obj" + j + "is at pos" + first);
             objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
             j++;
         }
@@ -27,12 +29,12 @@ public class MovingCircles : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            RightArrow();
+                RightArrow();     
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             LeftArrow();
         }
@@ -40,11 +42,31 @@ public class MovingCircles : MonoBehaviour
 
     void RightArrow()
     {
+        int j = 0;
+        first++;
 
+        for (int i = first; i < 20; i++)
+        {
+            Debug.Log("obj" + j + "is at pos" + first);
+            objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
+            j++;
+        }
+
+        return;
     }
 
     void LeftArrow()
     {
+        int j = 0;
+        first--;
 
+        for (int i = first; i < 20; i++)
+        {
+            Debug.Log("obj" + j + "is at pos" + first);
+            objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
+            j++;
+        }
+
+        return;
     }
 }
