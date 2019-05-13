@@ -22,23 +22,26 @@ public class WaterWheel : MonoBehaviour
             {
                 move = true;
                 ind++;
-                Debug.Log("WATERRRRR.");
+                Debug.Log("WATERRRRR. " + ind);
                 hit = true;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private IEnumerator Wait()
     {
-        if (other.gameObject.tag.Equals("water"))
-        {
-            hit = false;
-        }
+        yield return new WaitForSeconds(1.5f);
+        hit = false;
     }
 
     private void Update()
     {
-        if(move)
+        if (hit)
+        {
+            StartCoroutine(Wait());
+        }
+
+        if (move)
         {
             MoveThatCoon();
 
