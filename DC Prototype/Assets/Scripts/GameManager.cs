@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
                 // move the hole to the mouse point
                 hole.GetComponent<Transform>().position = hitPos;
             }
-            mainCam.GetComponent<CameraMover>().TriggerSelect(3);
+            mainCam.GetComponent<CameraMover>().selectedWP = 3;
 
             // turn the hole on, set start to false as we've started
             hole.SetActive(true);
@@ -114,10 +114,10 @@ public class GameManager : MonoBehaviour
     {
         intro = false;
         yield return new WaitForSeconds(2);
-        mainCam.GetComponent<CameraMover>().TriggerSelect(1);
+        mainCam.GetComponent<CameraMover>().selectedWP = 1;
         Debug.Log("MOVE OVER");
         yield return new WaitForSeconds(4);
-        mainCam.GetComponent<CameraMover>().TriggerSelect(2);
+        mainCam.GetComponent<CameraMover>().selectedWP = 2;
         SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
         start = true;
 
