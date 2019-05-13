@@ -37,10 +37,11 @@ public class Castle_Launch : MonoBehaviour
             }
             else if (colliderCount == 0)
             {
-                rb.isKinematic = true;
+                //rb.isKinematic = true;
                 mc = gameObject.AddComponent<MeshCollider>();
                 mc.convex = true;
                 colliderCount = -1;
+               // rb.isKinematic = false;
             }
             rb.velocity.Normalize();
         }
