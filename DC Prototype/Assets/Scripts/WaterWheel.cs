@@ -13,6 +13,7 @@ public class WaterWheel : MonoBehaviour
     public bool move;
 
     public GameObject maincam;
+    public float rotationAmount, rotationStep;
 
     private void OnTriggerEnter(Collider col)
     {
@@ -24,14 +25,9 @@ public class WaterWheel : MonoBehaviour
                 ind++;
                 Debug.Log("WATERRRRR. " + ind);
                 hit = true;
+                Spin();
             }
         }
-    }
-
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1.5f);
-        hit = false;
     }
 
     private void Update()
@@ -50,12 +46,24 @@ public class WaterWheel : MonoBehaviour
         {
             maincam.GetComponent<CameraMover>().selectedWP = 5;
         }
+
+        if (rotationAmount >= rotationStep)
+        {
+            this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
+            rotationAmount -= rotationStep * Time.deltaTime;
+        }
     }
 
     private void Start()
     {
         logBoy.transform.position = nextPos[0];
         logBoy.transform.rotation = Quaternion.Euler(nextRot[0]);
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.5f);
+        hit = false;
     }
 
     void MoveThatCoon() {
@@ -65,7 +73,13 @@ public class WaterWheel : MonoBehaviour
             logBoy.transform.rotation = Quaternion.Lerp(logBoy.transform.rotation, Quaternion.Euler(nextRot[ind]), Time.deltaTime * speed);
         }
         else {
-            logBoy.GetComponent<Rigidbody>().isKinematic = false;
+            logBoy.GetComponentInChildren<Rigidbody>().isKinematic = false;
         }
+    }
+
+    public void Spin()
+    {
+        rotationAmount += 80;
+        int rand = Random.Range(1, 100);
     }
 }

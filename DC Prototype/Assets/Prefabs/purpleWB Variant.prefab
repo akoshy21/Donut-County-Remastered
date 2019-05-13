@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1321431712628843794, guid: 9d7e3cba8c30342899a456b52174377e,
         type: 3}
       propertyPath: m_Name
-      value: purpleWB
+      value: purpleWB Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1321431712628619570, guid: 9d7e3cba8c30342899a456b52174377e,
         type: 3}
@@ -66,6 +66,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 96.26401
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356997253231143498, guid: 9d7e3cba8c30342899a456b52174377e,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3356997253231143499, guid: 9d7e3cba8c30342899a456b52174377e,
         type: 3}

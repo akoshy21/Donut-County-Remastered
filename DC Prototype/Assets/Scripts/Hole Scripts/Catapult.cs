@@ -99,7 +99,7 @@ public class Catapult : MonoBehaviour
         // set the water cylinder to active, wait 3 seconds, then de-activate
         // the water cylinder & set the waterfill to false
         waterCyl.SetActive(true);
-        waterCyl.GetComponentInChildren<ParticleSystem>().Emit(40);
+        //waterCyl.GetComponentInChildren<ParticleSystem>().Emit(40);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
 
