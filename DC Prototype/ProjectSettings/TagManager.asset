@@ -15,6 +15,7 @@ TagManager:
   - names
   - fader
   - fish
+  - noGo
   layers:
   - Default
   - TransparentFX

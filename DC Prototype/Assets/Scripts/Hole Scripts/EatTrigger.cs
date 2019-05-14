@@ -7,6 +7,8 @@ public class EatTrigger : MonoBehaviour
 
     public GameObject hole;
     public HoleManager hm;
+    Vector3 displayPos;
+    public Transform cam;
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class EatTrigger : MonoBehaviour
 
     private void Update()
     {
+        displayPos = cam.position + cam.forward*12.86f + cam.right * -4.38f + cam.up*4.04f;
         // finds all eatable objects and checks if their y is lower than the eat point (-5.11)
         // and then run Eat() [~ln 31]
         foreach(GameObject cal in GameObject.FindGameObjectsWithTag("eatable"))
@@ -40,9 +43,10 @@ public class EatTrigger : MonoBehaviour
             // if the object is launchable, it adds it to the insidehole list, sets the parent to the hole,
             //then makes the local position centered on the hole and above the eat pt and deactivates it.
             hm.insideHole.Add(obj);
-            obj.GetComponent<Transform>().position = new Vector3(0, -5.5f, 0);
+            obj.GetComponent<Transform>().position = displayPos;
             obj.layer = 9;
-            obj.SetActive(false);
+            PocketManager.pm.refModel = obj;
+            obj.GetComponent<Rigidbody>().isKinematic = true;
         }
         else
         {

@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool intro = false;
     public bool oof = false;
     public bool cutscene = true;
-
+    
     public GameObject dialogueCanvas;
 
     // makes the GameManager static, and stops it from being destroyed.
@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour
         {
             mainCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             hole = GameObject.FindWithTag("Hole");
+            hole.SetActive(false);
             StartGame();
-            dialogueCanvas = null;
-            StartCoroutine(dialogueCanvas.GetComponent<Faded>().FadeImage(true));
+            dialogueCanvas =null;
+            //StartCoroutine(dialogueCanvas.GetComponent<Faded>().FadeImage(true));
             names = null;
         }
         else if(!cutscene)
@@ -64,6 +65,9 @@ public class GameManager : MonoBehaviour
         // check if its start and get the mouse button
         if (start && Input.GetMouseButton(0))
         {
+            // turn the hole on, set start to false as we've started
+            hole.SetActive(true);
+
             // raycast to see where the mouse is at
             RaycastHit hit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
@@ -77,8 +81,6 @@ public class GameManager : MonoBehaviour
             }
             mainCam.GetComponent<CameraMover>().selectedWP = 3;
 
-            // turn the hole on, set start to false as we've started
-            hole.SetActive(true);
             start = false;
             // Debug.Log("start click");
 
@@ -101,6 +103,12 @@ public class GameManager : MonoBehaviour
                 SceneManager.UnloadSceneAsync("PauseScreen");
             }
         }
+
+        if(SceneManager.GetActiveScene().name.Equals("SampleScene"))
+        {
+            End(); 
+        }
+
     }
 
     void StartGame()
@@ -113,10 +121,10 @@ public class GameManager : MonoBehaviour
     IEnumerator IntroSequence()
     {
         intro = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         mainCam.GetComponent<CameraMover>().selectedWP = 1;
         Debug.Log("MOVE OVER");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         mainCam.GetComponent<CameraMover>().selectedWP = 2;
         SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
         start = true;
@@ -126,5 +134,15 @@ public class GameManager : MonoBehaviour
     public void MainScene()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void End()
+    {
+        GameObject[] goList = GameObject.FindGameObjectsWithTag("eatable");
+
+        if(goList.Length <= 1)
+        {
+            SceneManager.LoadScene("Trashopedia");
+        }
     }
 }

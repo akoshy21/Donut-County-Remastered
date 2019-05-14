@@ -44,6 +44,7 @@ public class textRenderer : MonoBehaviour
     public GameObject fader;
 
     public bool complete;
+    public bool stop;
 
     public float speed;
 
@@ -61,6 +62,17 @@ public class textRenderer : MonoBehaviour
         {
             dots.enabled = false;
             str += line[i++];
+
+            if (stop)
+            {
+                Debug.Log("BREAK");
+                txt.text = line;
+                complete = true;
+                dots.enabled = true;
+                stop = false;
+                yield break;
+            }
+
             yield return new WaitForSeconds(0.05f);
             txt.text = str;
         }
@@ -134,7 +146,7 @@ public class textRenderer : MonoBehaviour
 
         //text progresses with spacebar
         //txt.text = dialogue[idx].text;
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))&& complete == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1")) && complete == true)
         {
             //while there are still lines left in dialogue list
             if (idx < length - 1)
@@ -147,6 +159,10 @@ public class textRenderer : MonoBehaviour
             {
                 GameManager.manager.MainScene();
             }
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1") && complete != true)
+        {
+            stop = true; 
         }
 
         //camera changes to character speaking 

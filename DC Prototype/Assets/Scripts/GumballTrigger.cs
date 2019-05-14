@@ -11,6 +11,12 @@ public class GumballTrigger : MonoBehaviour
     public float rotationAmount;
     GameObject lastHit;
 
+    GameObject cam;
+
+    private void Start()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+    }
 
     void Update()
     {
@@ -62,5 +68,11 @@ public class GumballTrigger : MonoBehaviour
         {
             hit = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        cam.GetComponent<CameraMover>().selectedWP += 1;
+
     }
 }

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Catapult : MonoBehaviour
 {
+    //Water Geyser Stuff
+    private ParticleSystem waterShoot;
+    public bool waterOn;
+    public float waterTimer;
+
     public HoleManager manager;
     public float launchForce;
     public GameObject waterCyl;
@@ -12,12 +17,22 @@ public class Catapult : MonoBehaviour
 
     void Start()
     {
+        //waterShoot = GetComponent<ParticleSystem>();
+        waterTimer = 0f;
         CatapultModel.GetComponent<Animator>().enabled = false;
         manager = GetComponent<HoleManager>();  // set manager to HoleManager component
     }
 
     void Update()
     {
+        waterTimer = waterTimer + Time.deltaTime;
+        // var emission = waterShoot.emission;
+        // emission.enabled = waterOn;
+        if (waterTimer >= 2.5f)
+        {
+            waterOn = false;
+        }
+        //connecting the particle system to the bool
         // on click, liftoff
         if (Input.GetMouseButtonDown(0))
         {
@@ -60,6 +75,8 @@ public class Catapult : MonoBehaviour
             }
             else if(current.tag.Equals("water"))
             {
+                waterOn = true;
+                waterTimer = 0f;
                 if (manager.insideHole.Count <= 0)
                 {
                     CatapultModel.SetActive(false);
@@ -89,6 +106,7 @@ public class Catapult : MonoBehaviour
         obj.transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         obj.transform.rotation = Quaternion.Euler(0, 0, 0);
         obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        obj.GetComponent<Rigidbody>().isKinematic = false;
 
         //launch the object
         obj.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
@@ -104,7 +122,7 @@ public class Catapult : MonoBehaviour
         // set the water cylinder to active, wait 3 seconds, then de-activate
         // the water cylinder & set the waterfill to false
         waterCyl.SetActive(true);
-        //waterCyl.GetComponentInChildren<ParticleSystem>().Emit(40);
+       // waterCyl.GetComponentInChildren<ParticleSystem>().Emit(40);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
 

@@ -19,27 +19,8 @@ public class CameraMover : MonoBehaviour
 
     private void Update()
     {
-        if(selectedWP == 1)
-        {
-            MoveCam(waypoints[1], rotations[1]);
-            Debug.Log("SHIFT TO ONE");
-        }
-        else if (selectedWP == 2)
-        {
-            MoveCam(waypoints[2], rotations[2]);
-        }
-        else if (selectedWP == 3)
-        {
-            MoveCam(waypoints[3], rotations[3]);
-        }
-        else if(selectedWP == 4)
-        {
-            MoveCam(waypoints[4], rotations[4]);
-        }
-        else if (selectedWP == 5)
-        {
-            MoveCam(waypoints[4], rotations[4]);
-        }
+            MoveCam(waypoints[selectedWP], rotations[selectedWP]);
+           //Debug.Log("SHIFT TO " + selectedWP);
     }
 
     void MoveCam(Vector3 newPos, Vector3 newRot)
