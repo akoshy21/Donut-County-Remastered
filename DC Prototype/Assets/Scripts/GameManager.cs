@@ -64,6 +64,9 @@ public class GameManager : MonoBehaviour
         // check if its start and get the mouse button
         if (start && Input.GetMouseButton(0))
         {
+            // turn the hole on, set start to false as we've started
+            hole.SetActive(true);
+
             // raycast to see where the mouse is at
             RaycastHit hit;
             Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
@@ -77,8 +80,6 @@ public class GameManager : MonoBehaviour
             }
             mainCam.GetComponent<CameraMover>().selectedWP = 3;
 
-            // turn the hole on, set start to false as we've started
-            hole.SetActive(true);
             start = false;
             // Debug.Log("start click");
 
