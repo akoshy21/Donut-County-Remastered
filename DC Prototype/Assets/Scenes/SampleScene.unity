@@ -19821,7 +19821,7 @@ Transform:
   m_LocalScale: {x: 2.4090838, y: 18.14479, z: 38.03511}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 84.622}
 --- !u!1001 &733828709595172914
 PrefabInstance:
@@ -20925,6 +20925,7 @@ MonoBehaviour:
   rotationAmount: 0
   rotationStep: 10
   crashed: 0
+  cam: {fileID: 534669902}
 --- !u!65 &4970445530442796176
 BoxCollider:
   m_ObjectHideFlags: 0
