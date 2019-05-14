@@ -7,6 +7,8 @@ public class FerrisWheelSpin : MonoBehaviour
     public int count = 0;
     public float rotationAmount, rotationStep;
 
+    public GameObject cam;
+
     private void Update()
     {
         if (rotationAmount >= rotationStep)
@@ -22,6 +24,7 @@ public class FerrisWheelSpin : MonoBehaviour
         {
             rotationAmount += 160;
             rotationStep = 60;
+            cam.GetComponent<CameraMover>().selectedWP++;
         }
         else {
             rotationAmount += 80;

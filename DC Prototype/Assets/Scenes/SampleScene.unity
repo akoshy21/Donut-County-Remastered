@@ -20923,6 +20923,7 @@ MonoBehaviour:
   count: 0
   rotationAmount: 0
   rotationStep: 30
+  cam: {fileID: 534669902}
 --- !u!4 &4970445530443223209
 Transform:
   m_ObjectHideFlags: 0
