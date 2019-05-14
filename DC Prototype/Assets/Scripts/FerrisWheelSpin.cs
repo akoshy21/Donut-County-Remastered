@@ -6,8 +6,8 @@ public class FerrisWheelSpin : MonoBehaviour
 {
     public int count = 0;
     public float rotationAmount, rotationStep;
-    public bool crashed = false;
-    bool spinUp = false;
+
+    public GameObject cam;
 
     private void Update()
     {
