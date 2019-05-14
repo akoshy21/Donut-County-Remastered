@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class infinite : MonoBehaviour
 {
-    private void OnDestroy()
+    private void OnCollisionEnter(Collision collision)
     {
         Instantiate(this);
     }
