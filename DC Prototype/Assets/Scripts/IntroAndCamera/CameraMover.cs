@@ -20,7 +20,7 @@ public class CameraMover : MonoBehaviour
     private void Update()
     {
             MoveCam(waypoints[selectedWP], rotations[selectedWP]);
-            Debug.Log("SHIFT TO " + selectedWP);
+           //Debug.Log("SHIFT TO " + selectedWP);
     }
 
     void MoveCam(Vector3 newPos, Vector3 newRot)
