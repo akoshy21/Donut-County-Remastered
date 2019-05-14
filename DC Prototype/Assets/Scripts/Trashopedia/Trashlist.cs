@@ -20,10 +20,10 @@ public class Trashlist : MonoBehaviour
     private string n1 = "Fun Flume";
     private string d1 = "What kind of monster would destroy the Fun Flume?";
 
-    private string n2 = "";
-    private string d2 = "";
+    private string n2 = "Water Balloon";
+    private string d2 = "Water balloons are like normal balloons filled with spite.";
 
-    private string n3 = "Cone";
+    private string n3 = "Construction Cone";
     private string d3 = "Cone is an underutilised and frankly disrespected shape.";
 
     private string n4 = "Water Balloon Dispenser" ;
@@ -32,11 +32,11 @@ public class Trashlist : MonoBehaviour
     private string n5 = "Castle" ;
     private string d5 = "A princess house. Princesses make excellent garbage. ";
 
-    private string n6 = "";
-    private string d6 = "";
+    private string n6 = "Circus Tent";
+    private string d6 = "A very ugly dress for giants.";
 
-    private string n7 = "";
-    private string d7 = "";
+    private string n7 = "Theme Park Trash Can";
+    private string d7 = "A home for used corn dogs.";
 
 
     int idx = 0;
@@ -50,7 +50,7 @@ public class Trashlist : MonoBehaviour
         names.Add(n4);
         names.Add(n5);
         names.Add(n6);
-        names.Add(n7);
+        //names.Add(n7);
 
         descs.Add(d0);
         descs.Add(d1);
@@ -59,7 +59,7 @@ public class Trashlist : MonoBehaviour
         descs.Add(d4);
         descs.Add(d5);
         descs.Add(d6);
-        descs.Add(d7);
+        //descs.Add(d7);
 
         objName.text = names[idx];
         objDesc.text = descs[idx];
