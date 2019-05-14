@@ -47,7 +47,7 @@ public class WaterWheel : MonoBehaviour
         }
         if(ind == 1)
         {
-            maincam.GetComponent<CameraMover>().selectedWP = 5;
+            maincam.GetComponent<CameraMover>().selectedWP = 4;
         }
 
         if (rotationAmount >= rotationStep)

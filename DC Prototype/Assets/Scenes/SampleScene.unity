@@ -12014,7 +12014,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
 --- !u!1 &1440820267
@@ -14530,6 +14530,22 @@ MonoBehaviour:
   slide: {fileID: 1969811309}
   speed: 1.5
   wheel: {fileID: 341381346}
+--- !u!54 &1770648403
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770648398}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1774899234
 GameObject:
   m_ObjectHideFlags: 0
