@@ -75,6 +75,11 @@ public class Catapult : MonoBehaviour
 
     void LaunchObject(GameObject obj)
     {
+        if(obj.GetComponent<PuddleMaker>() != null)
+        {
+            obj.GetComponent<PuddleMaker>().launched = true;
+        }
+
         // turn the game object back on
         obj.gameObject.SetActive(true);
         // set its magnetic quality back to true when it exits
@@ -99,7 +104,9 @@ public class Catapult : MonoBehaviour
         // set the water cylinder to active, wait 3 seconds, then de-activate
         // the water cylinder & set the waterfill to false
         waterCyl.SetActive(true);
+        //waterCyl.GetComponentInChildren<ParticleSystem>().Emit(40);
         yield return new WaitForSeconds(3);
         waterCyl.SetActive(false);
+
     }
 }

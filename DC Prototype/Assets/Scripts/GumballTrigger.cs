@@ -6,7 +6,7 @@ public class GumballTrigger : MonoBehaviour
 {
     public float rotationStep;
     public bool hit;
-    public GameObject balloon;
+    public GameObject balloonG, balloonP, balloonB;
     public GameObject spinner;
     public float rotationAmount;
     GameObject lastHit;
@@ -24,7 +24,20 @@ public class GumballTrigger : MonoBehaviour
     public void SpinAndDispense()
     {
         rotationAmount += 80;
-        Instantiate(balloon);
+        int rand = Random.Range(1, 100);
+
+        if(rand <= 33)
+        {
+            Instantiate(balloonG);
+        }
+        else if (rand > 33 && rand < 67)
+        {
+            Instantiate(balloonP);
+        }
+        else if (rand >= 67)
+        {
+            Instantiate(balloonB);
+        }
     }
 
     private void OnTriggerEnter(Collider col)
@@ -33,9 +46,12 @@ public class GumballTrigger : MonoBehaviour
         {
             if (col.gameObject.tag.Equals("eatable"))
             {
-                hit = true;
-                SpinAndDispense();
-                Debug.Log("UH. STUFF");
+                if (col.GetComponent<Eatable>().launchable)
+                {
+                    hit = true;
+                    SpinAndDispense();
+                    Debug.Log("UH. STUFF");
+                }
             }
         }
     }
