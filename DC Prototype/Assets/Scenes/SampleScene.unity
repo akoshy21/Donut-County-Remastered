@@ -6005,14 +6005,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.092706405, y: 0.45882472, z: -0.06068537, w: 0.881591}
-  m_LocalPosition: {x: -39.5, y: 13.1, z: -4.3}
+  m_LocalRotation: {x: 0.10495941, y: 0.6651828, z: -0.035506453, w: 0.7384136}
+  m_LocalPosition: {x: -27.1, y: 18.9, z: 38.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 989049108}
   m_Father: {fileID: 0}
   m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 12.659, y: 54.847004, z: -1.2880001}
+  m_LocalEulerAnglesHint: {x: 11.668, y: 84.549, z: 5.1080003}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6034,6 +6034,7 @@ MonoBehaviour:
   - {x: -17.33, y: 5.99, z: -2.9}
   - {x: -28.24, y: 10.43, z: -3.36}
   - {x: -39.5, y: 13.1, z: -4.3}
+  - {x: -27.1, y: 18.9, z: 38.2}
   - {x: 0, y: 0, z: 0}
   rotations:
   - {x: 0, y: 42.252, z: 0}
@@ -6042,6 +6043,7 @@ MonoBehaviour:
   - {x: 14.71, y: 62.362, z: 0}
   - {x: 14.656, y: 67.40501, z: 1.279}
   - {x: 12.659, y: 54.847, z: -1.288}
+  - {x: 11.668, y: 84.549, z: 5.108}
   - {x: 0, y: 0, z: 0}
 --- !u!320 &534669908
 PlayableDirector:
@@ -11923,15 +11925,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.71
+      value: -16.62
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.03
+      value: 12.08
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5cccf5fdb0f32834c8d64a039d38f195, type: 3}
       propertyPath: m_LocalRotation.x
@@ -14542,7 +14544,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
