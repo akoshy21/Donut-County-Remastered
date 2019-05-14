@@ -41,6 +41,7 @@ public class Catapult : MonoBehaviour
         if(manager.insideHole.Count > 0)
         {
             CatapultModel.SetActive(true);
+            displayPocket();
         }
 
         // if waterspray is true, then start the water coroutine [~ ln 76]
@@ -51,6 +52,10 @@ public class Catapult : MonoBehaviour
             waterSpray = false;
             manager.waterFill = false;
         }
+    }
+    private void displayPocket()
+    {
+
     }
     
     private void Liftoff()
@@ -106,6 +111,7 @@ public class Catapult : MonoBehaviour
         obj.transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         obj.transform.rotation = Quaternion.Euler(0, 0, 0);
         obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        obj.GetComponent<Rigidbody>().isKinematic = false;
 
         //launch the object
         obj.GetComponent<Rigidbody>().AddForce(Vector3.up * launchForce, ForceMode.Impulse);
