@@ -497,9 +497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3ea56a9890f2947b386f997d724cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objName: {fileID: 0}
-  objDesc: {fileID: 0}
-  speed: 10
+  objName: {fileID: 1656643081}
+  objDesc: {fileID: 1726739656}
+  speed: 1
   right1: {fileID: 1414592230}
   right2: {fileID: 2016888941}
   left1: {fileID: 1370049992}
@@ -716,6 +716,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fee35902967d3940ae9aee1b70e2a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  names: []
+  descs: []
+  n0: Fun Flume Log
+  d0: Ever think about all the other types of fumes besides log? I don't.
+  m0: {fileID: 0}
   n1: 
   d1: 
   m1: {fileID: 0}
@@ -731,6 +736,12 @@ MonoBehaviour:
   n5: Castle
   d5: 'A princess house. Princesses make excellent garbage. '
   m5: {fileID: 0}
+  n6: 
+  d6: 
+  m6: {fileID: 0}
+  n7: 
+  d7: 
+  m7: {fileID: 0}
 --- !u!4 &1324666224
 Transform:
   m_ObjectHideFlags: 0
