@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2adf9680e7b2b3a43b56a1629c216425
+  - enabled: 1
+    path: Assets/Scenes/cutscene test.unity
+    guid: 9b3e4e62d0afc3640ab4a011492b93fb
+  - enabled: 1
+    path: Assets/Scenes/Trashopedia.unity
+    guid: cd345ac68b0c7e44a9b1c79e255409a3
   m_configObjects: {}

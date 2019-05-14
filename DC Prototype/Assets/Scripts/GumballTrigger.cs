@@ -11,6 +11,8 @@ public class GumballTrigger : MonoBehaviour
     public float rotationAmount;
     GameObject lastHit;
 
+    GameObject cam;
+
 
     void Update()
     {
@@ -62,5 +64,10 @@ public class GumballTrigger : MonoBehaviour
         {
             hit = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+
     }
 }
