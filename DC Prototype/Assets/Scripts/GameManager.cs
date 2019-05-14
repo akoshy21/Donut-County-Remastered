@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public bool oof = false;
     public bool cutscene = true;
 
+    public GameObject infinitePuddle;
+
     public GameObject dialogueCanvas;
 
     // makes the GameManager static, and stops it from being destroyed.
@@ -102,6 +104,11 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.UnloadSceneAsync("PauseScreen");
             }
+        }
+
+        if(!infinitePuddle.active)
+        {
+            infinitePuddle.SetActive(true); 
         }
     }
 

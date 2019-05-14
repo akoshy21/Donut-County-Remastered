@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class infinite : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public GameObject infinitePuddle;
+
+    private void Update()
     {
-        Instantiate(this);
+        if (!infinitePuddle.active)
+        {
+            infinitePuddle.SetActive(true);
+        }
     }
 }
