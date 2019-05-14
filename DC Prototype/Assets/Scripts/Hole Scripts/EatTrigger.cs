@@ -45,7 +45,7 @@ public class EatTrigger : MonoBehaviour
             hm.insideHole.Add(obj);
             obj.GetComponent<Transform>().position = displayPos;
             obj.layer = 9;
-            
+            PocketManager.pm.refModel = obj;
             obj.GetComponent<Rigidbody>().isKinematic = true;
         }
         else
