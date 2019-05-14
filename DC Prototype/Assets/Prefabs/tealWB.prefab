@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 1321431712628619570}
   - component: {fileID: 3356997253231143498}
   - component: {fileID: 3356997253231143499}
+  - component: {fileID: 1466277461032764344}
   m_Layer: 9
   m_Name: tealWB
   m_TagString: Untagged
@@ -158,6 +159,20 @@ MonoBehaviour:
   launchable: 1
   magnetic: 1
   com: {x: 0, y: 0, z: 0}
+--- !u!114 &1466277461032764344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321431712628843794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689b052cff2334432a753ba391cb6c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puddle: {fileID: 2407047086132458811, guid: 9a650dcd31c4c4069a863ea58fe73f1d, type: 3}
+  fish: {fileID: 5663552520755477076, guid: 811a1957ef7a44704b326ed0c04ed32b, type: 3}
 --- !u!1 &1321431712628843798
 GameObject:
   m_ObjectHideFlags: 0

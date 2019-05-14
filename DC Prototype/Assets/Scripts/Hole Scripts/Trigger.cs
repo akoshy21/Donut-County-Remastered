@@ -18,11 +18,11 @@ public class Trigger : MonoBehaviour
         // water to the list of objects in the hole
         if (col.gameObject.tag.Equals("water"))
         {
-
             Debug.Log("watered: " + col.gameObject.name);
             hm.GetComponent<HoleManager>().waterFill = true;
             Debug.Log("waterfill " + hm.GetComponent<HoleManager>().waterFill);
             hm.GetComponent<HoleManager>().insideHole.Add(col.gameObject);
+            col.gameObject.SetActive(false);
         }
         else
         {

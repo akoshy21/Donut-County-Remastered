@@ -75,6 +75,11 @@ public class Catapult : MonoBehaviour
 
     void LaunchObject(GameObject obj)
     {
+        if(obj.GetComponent<PuddleMaker>() != null)
+        {
+            obj.GetComponent<PuddleMaker>().launched = true;
+        }
+
         // turn the game object back on
         obj.gameObject.SetActive(true);
         // set its magnetic quality back to true when it exits
