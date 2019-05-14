@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HoleManager : MonoBehaviour
 {
+    //Water Geyser Stuff
+    private ParticleSystem waterShoot;
+    public bool waterOn;
+    public float waterTimer;
+
     public float speedMod;
     public float holeSize = 1;
     public List<GameObject> insideHole = new List<GameObject>();
