@@ -508,8 +508,9 @@ GameObject:
   - component: {fileID: 44884728}
   - component: {fileID: 44884727}
   - component: {fileID: 44884731}
+  - component: {fileID: 44884732}
   m_Layer: 9
-  m_Name: waterpipe
+  m_Name: puddle the undying
   m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,6 +605,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &44884732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44884726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c02ac6daf7847f3b348a450a4d88bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &46385165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1210,6 +1223,7 @@ GameObject:
   - component: {fileID: 101462592}
   - component: {fileID: 104362592}
   - component: {fileID: 103362720}
+  - component: {fileID: 101428833}
   m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1217,6 +1231,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &101428833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101428832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1156ee974ce4c6dbfcad3a1643e8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calories: 0
+  launchable: 0
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!1 &101428834
 GameObject:
   m_ObjectHideFlags: 0
