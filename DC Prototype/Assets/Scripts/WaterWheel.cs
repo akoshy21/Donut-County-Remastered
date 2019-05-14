@@ -9,7 +9,7 @@ public class WaterWheel : MonoBehaviour
     public float speed;
     public int ind = 0;
 
-    public GameObject gumball, gumballNoGo;
+    public GameObject gumball, gumballNoGo, waterPuddle;
 
     public GameObject logBoy;
     public bool move;
@@ -96,6 +96,7 @@ public class WaterWheel : MonoBehaviour
             {
                 logBoy.GetComponent<Rigidbody>().isKinematic = false;
                 gumball.GetComponent<Rigidbody>().isKinematic = false;
+                waterPuddle.gameObject.SetActive(true);
                 gumballNoGo.SetActive(false);
                 gumball.transform.Translate(0, 0.1f, 0);
                 goOn = false;
