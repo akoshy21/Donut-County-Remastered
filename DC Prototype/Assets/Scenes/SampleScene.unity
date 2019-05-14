@@ -1231,22 +1231,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &101428833
-MonoBehaviour:
+--- !u!64 &101428833
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101428832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1156ee974ce4c6dbfcad3a1643e8c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  calories: 0
-  launchable: 0
-  magnetic: 1
-  com: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300004, guid: 129b5305556c443a690503c9fc73554b, type: 3}
 --- !u!1 &101428834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1256,6 @@ GameObject:
   - component: {fileID: 101462594}
   - component: {fileID: 104362594}
   - component: {fileID: 103362722}
-  - component: {fileID: 1084979489}
   - component: {fileID: 1084979487}
   m_Layer: 0
   m_Name: Cube.006
@@ -9583,22 +9580,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300006, guid: 129b5305556c443a690503c9fc73554b, type: 3}
---- !u!54 &1084979489
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101428834}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &1087706863
 Transform:
   m_ObjectHideFlags: 0
@@ -12295,6 +12276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1444700059}
   - component: {fileID: 1444700060}
+  - component: {fileID: 1444700061}
   m_Layer: 0
   m_Name: Flume Log
   m_TagString: Untagged
@@ -12336,6 +12318,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1444700061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444700058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1156ee974ce4c6dbfcad3a1643e8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calories: 2
+  launchable: 0
+  magnetic: 1
+  com: {x: 0, y: 0, z: 0}
 --- !u!1 &1452496805
 GameObject:
   m_ObjectHideFlags: 0
@@ -17318,38 +17316,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1434025712}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1969811311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969811309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1156ee974ce4c6dbfcad3a1643e8c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  calories: 0.3
-  launchable: 0
-  magnetic: 1
-  com: {x: 0, y: 0, z: 0}
---- !u!54 &1969811312
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969811309}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1972543643
 GameObject:
   m_ObjectHideFlags: 0
