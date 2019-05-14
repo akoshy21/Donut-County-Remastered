@@ -98,6 +98,7 @@ public class WaterWheel : MonoBehaviour
                 gumball.GetComponent<Rigidbody>().isKinematic = false;
                 gumballNoGo.SetActive(false);
                 gumball.transform.Translate(0, 0.1f, 0);
+                goOn = false;
             }
         }
     }

@@ -41,7 +41,6 @@ public class Catapult : MonoBehaviour
         if(manager.insideHole.Count > 0)
         {
             CatapultModel.SetActive(true);
-            displayPocket();
         }
 
         // if waterspray is true, then start the water coroutine [~ ln 76]
@@ -52,10 +51,6 @@ public class Catapult : MonoBehaviour
             waterSpray = false;
             manager.waterFill = false;
         }
-    }
-    private void displayPocket()
-    {
-
     }
     
     private void Liftoff()

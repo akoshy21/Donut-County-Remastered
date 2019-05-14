@@ -13,6 +13,10 @@ public class GumballTrigger : MonoBehaviour
 
     GameObject cam;
 
+    private void Start()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+    }
 
     void Update()
     {
@@ -68,6 +72,7 @@ public class GumballTrigger : MonoBehaviour
 
     private void OnDestroy()
     {
+        cam.GetComponent<CameraMover>().selectedWP += 1;
 
     }
 }
