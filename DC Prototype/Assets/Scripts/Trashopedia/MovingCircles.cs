@@ -15,6 +15,7 @@ public class MovingCircles : MonoBehaviour
 
     public List<Vector3> pos = new List<Vector3>();
     public List<GameObject> objs = new List<GameObject>();
+    public List<RawImage> imgs = new List<RawImage>();
 
     public Texture mainImg;
     public Texture bgImg;
@@ -24,6 +25,9 @@ public class MovingCircles : MonoBehaviour
 
     private List<string> names = new List<string>();
     private List<string> descs = new List<string>();
+
+    public Color bgColor;
+    public Color mainColor;
 
     void Start()
     {
@@ -68,6 +72,8 @@ public class MovingCircles : MonoBehaviour
                 
                 objs[i].GetComponent<RectTransform>().localScale = Vector3.Lerp(new Vector3(1.7f, 1.7f, 1.7f), new Vector3(.7f, .7f, .7f), speed * Time.deltaTime);
 
+                imgs[i].color.Equals(bgColor);
+
             }
             else
             {
@@ -75,6 +81,8 @@ public class MovingCircles : MonoBehaviour
                 
                 // objs[i].GetComponent<RectTransform>().localScale = new Vector3(.6f, .6f, .6f);
                 objs[i].GetComponent<RectTransform>().localScale = Vector3.Lerp(new Vector3(.7f, .7f, .7f), new Vector3(1.7f, 1.7f, 1.7f), speed * Time.deltaTime);
+
+                imgs[i].color.Equals(mainColor);
             }
         }
     }

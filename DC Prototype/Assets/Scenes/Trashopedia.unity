@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 20605369}
   - component: {fileID: 20605368}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 115094798}
   - component: {fileID: 115094797}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 145946047}
   - component: {fileID: 145946046}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 431391824}
   - component: {fileID: 431391823}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -820,9 +820,19 @@ MonoBehaviour:
   - {fileID: 1608022038}
   - {fileID: 1435525483}
   - {fileID: 1859449862}
+  imgs:
+  - {fileID: 1765122879}
+  - {fileID: 431391823}
+  - {fileID: 20605368}
+  - {fileID: 115094797}
+  - {fileID: 1154588695}
+  - {fileID: 1691641997}
+  - {fileID: 145946046}
   mainImg: {fileID: 2800000, guid: fb33d1c76a279ca40b4e8e985d24495f, type: 3}
   bgImg: {fileID: 2800000, guid: 24737e7e0bbf93c40bbcb5d0bb95249b, type: 3}
   first: 10
+  bgColor: {r: 0, g: 0, b: 0, a: 0}
+  mainColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1122324634
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +924,7 @@ GameObject:
   - component: {fileID: 1154588696}
   - component: {fileID: 1154588695}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1664,7 +1674,7 @@ GameObject:
   - component: {fileID: 1691641998}
   - component: {fileID: 1691641997}
   m_Layer: 5
-  m_Name: RawImage (1)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1909,7 +1919,7 @@ GameObject:
   - component: {fileID: 1765122880}
   - component: {fileID: 1765122879}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
