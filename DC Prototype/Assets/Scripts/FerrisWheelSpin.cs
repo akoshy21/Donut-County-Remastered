@@ -7,13 +7,13 @@ public class FerrisWheelSpin : MonoBehaviour
     public int count = 0;
     public float rotationAmount, rotationStep;
     public bool crashed = false;
+    bool spinUp = false;
 
     private void Update()
     {
         if (!crashed)
         {
             this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
-            rotationAmount -= rotationStep * Time.deltaTime;
         }
     }
 
@@ -21,11 +21,10 @@ public class FerrisWheelSpin : MonoBehaviour
     {
         if (num > 1)
         {
-            rotationAmount += 160;
-            rotationStep = 60;
+            rotationStep += 1;
         }
         else {
-            rotationAmount += 80;
+            rotationStep += 2;
         }
     }
 
