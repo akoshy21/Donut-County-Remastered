@@ -31,13 +31,16 @@ public class MovingCircles : MonoBehaviour
 
     void Start()
     {
-        int j = 0;
+        int j = first;
 
-        for(int i  = first; i < 20; i++)
-        {   
-            //Debug.Log("obj" + j + "is at pos" + first);
-            objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
-            j++;
+        for(int i  = 0; i < objs.Count; i++)
+        {
+            if (j >= 0 && j <= pos.Count)
+            {
+                Debug.Log("obj" + j + "is at pos" + first);
+                objs[i].GetComponent<RectTransform>().anchoredPosition = pos[j];
+                j++;
+            }
         }
 
         //objName.GetComponent<Text>().text = names[textnum];
@@ -89,16 +92,19 @@ public class MovingCircles : MonoBehaviour
 
     void RightArrow()
     {
-        int j = 0;
-        first++;
+        first--;
+        int j = first;
 
-        for (int i = first; i < 20; i++)
+        for (int i = 0; i < objs.Count; i++)
         {
-            //Debug.Log("obj" + j + "is at pos" + first);
-            objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
-            //this is supposed to lerp but like i cry 
-            //objs[j].GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(objs[j].GetComponent<RectTransform>().anchoredPosition, pos[i], speed, Time.deltaTime);
-            j++;
+            if (j >= 0 && j <= pos.Count)
+            {
+                //Debug.Log("obj" + j + "is at pos" + first);
+                objs[i].GetComponent<RectTransform>().anchoredPosition = pos[j];
+                //this is supposed to lerp but like i cry 
+                //objs[j].GetComponent<RectTransform>().anchoredPosition = Vector3.Lerp(objs[j].GetComponent<RectTransform>().anchoredPosition, pos[i], speed, Time.deltaTime);
+                j++;
+            }
         }
 
         /*if (textnum < 7)
@@ -112,14 +118,17 @@ public class MovingCircles : MonoBehaviour
 
     void LeftArrow()
     {
-        int j = 0;
-        first--;
+        first++;
+        int j = first;
 
-        for (int i = first; i < 20; i++)
+        for (int i = 0; i < objs.Count; i++)
         {
-            //Debug.Log("obj" + j + "is at pos" + first);
-            objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
-            j++;
+            if (j >= 0 && j <= pos.Count)
+            {
+                //Debug.Log("obj" + j + "is at pos" + first);
+                objs[i].GetComponent<RectTransform>().anchoredPosition = pos[j];
+                j++;
+            }
         }
 
         /*if (textnum > 0)
