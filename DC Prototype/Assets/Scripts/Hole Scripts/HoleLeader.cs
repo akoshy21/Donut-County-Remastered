@@ -24,7 +24,7 @@ public class HoleLeader : MonoBehaviour
         // Default layer ensures that only the floor impacts our hole position
         if (Physics.Raycast(ray, out hit, 100, 1 << LayerMask.NameToLayer("Default")))
         {
-            Vector3 objectHit = new Vector3(hit.point.x, hit.point.y - 0.7396f, hit.point.z);
+            Vector3 objectHit = new Vector3(hit.point.x, hit.point.y - hole.GetComponent<HoleManager>().holeSize, hit.point.z);
             objectHit.y = this.transform.position.y; // y is preset by us.
 
 

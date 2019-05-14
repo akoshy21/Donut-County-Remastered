@@ -44,13 +44,11 @@ public class textRenderer : MonoBehaviour
     public GameObject fader;
 
     public bool complete;
+    public bool stop;
 
     public float speed;
 
-    Dialogue d1;
-    Dialogue d2;
-    Dialogue d3;
-    Dialogue d4;
+    Dialogue[] d;
 
     private int length;
 
@@ -64,6 +62,17 @@ public class textRenderer : MonoBehaviour
         {
             dots.enabled = false;
             str += line[i++];
+
+            if (stop)
+            {
+                Debug.Log("BREAK");
+                txt.text = line;
+                complete = true;
+                dots.enabled = true;
+                stop = false;
+                yield break;
+            }
+
             yield return new WaitForSeconds(0.05f);
             txt.text = str;
         }
@@ -78,20 +87,35 @@ public class textRenderer : MonoBehaviour
 
     void Start()
     {
+        d = new Dialogue[18];
         //pulls dialogue from CutsceneScript & assigns character
-        d1 = new Dialogue(CutsceneScript.instance.l1, mira);
-        d2 = new Dialogue(CutsceneScript.instance.l2, bk);
-        d3 = new Dialogue(CutsceneScript.instance.l3, bk);
-        d4 = new Dialogue(CutsceneScript.instance.l4, mira);
+        d[0] = new Dialogue(CutsceneScript.instance.l[0], mira);
+        d[1] = new Dialogue(CutsceneScript.instance.l[1], bk);
+        d[2] = new Dialogue(CutsceneScript.instance.l[2], mira);
+        d[3] = new Dialogue(CutsceneScript.instance.l[3], bk);
+        d[4] = new Dialogue(CutsceneScript.instance.l[4], mira);
+        d[5] = new Dialogue(CutsceneScript.instance.l[5], mira);
+        d[6] = new Dialogue(CutsceneScript.instance.l[6], mira);
+        d[7] = new Dialogue(CutsceneScript.instance.l[7], bk);
+        d[8] = new Dialogue(CutsceneScript.instance.l[8], bk);
+        d[9] = new Dialogue(CutsceneScript.instance.l[9], mira);
+        d[10] = new Dialogue(CutsceneScript.instance.l[10], bk);
+        d[11] = new Dialogue(CutsceneScript.instance.l[11], bk);
+        d[12] = new Dialogue(CutsceneScript.instance.l[12], bk);
+        d[13] = new Dialogue(CutsceneScript.instance.l[13], bk);
+        d[14] = new Dialogue(CutsceneScript.instance.l[14], mira);
+        d[15] = new Dialogue(CutsceneScript.instance.l[15], mira);
+        d[16] = new Dialogue(CutsceneScript.instance.l[16], bk);
+        d[17] = new Dialogue(CutsceneScript.instance.l[17], bk);
 
         //adds each line to dialogue list
-        dialogue.Add(d1);
-        dialogue.Add(d2);
-        dialogue.Add(d3);
-        dialogue.Add(d4);
+        foreach (Dialogue di in d)
+        {
+            dialogue.Add(di); 
+        }
 
         //num of lines in dialogue
-        length = 4;
+        length = 18;
         idx = 0;
 
         //txt.text = dialogue[idx].text;
@@ -122,7 +146,7 @@ public class textRenderer : MonoBehaviour
 
         //text progresses with spacebar
         //txt.text = dialogue[idx].text;
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))&& complete == true)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1")) && complete == true)
         {
             //while there are still lines left in dialogue list
             if (idx < length - 1)
@@ -135,6 +159,10 @@ public class textRenderer : MonoBehaviour
             {
                 GameManager.manager.MainScene();
             }
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1") && complete != true)
+        {
+            stop = true; 
         }
 
         //camera changes to character speaking 

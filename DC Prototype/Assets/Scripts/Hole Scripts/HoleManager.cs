@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoleManager : MonoBehaviour
 {
+    
+
     public float speedMod;
     public float holeSize = 1;
     public List<GameObject> insideHole = new List<GameObject>();
@@ -22,6 +24,17 @@ public class HoleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = insideHole.Count - 1; i >= 0; i--)
+        {
+            if(i < insideHole.Count-1)
+            {
+                insideHole[i].SetActive(false);
+            }
+            else if(!(insideHole[i].tag == "water"))
+            {
+                insideHole[i].SetActive(true);
+            }
+        }
         // if waterFill is true, then have the water object in the hole set to true.
         if(waterFill)
         {
