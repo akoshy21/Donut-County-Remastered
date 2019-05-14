@@ -9,6 +9,8 @@ public class WaterWheel : MonoBehaviour
     public float speed;
     public int ind = 0;
 
+    public GameObject gumball, gumballNoGo;
+
     public GameObject logBoy;
     public bool move;
     public bool goOn;
@@ -92,7 +94,10 @@ public class WaterWheel : MonoBehaviour
             }
             if (Vector3.Distance(logBoy.transform.position, nextPos[ind]) <= 0.25f)
             {
-                logBoy.GetComponentInChildren<Rigidbody>().isKinematic = false;
+                logBoy.GetComponent<Rigidbody>().isKinematic = false;
+                gumball.GetComponent<Rigidbody>().isKinematic = false;
+                gumballNoGo.SetActive(false);
+                gumball.transform.Translate(0, 0.1f, 0);
             }
         }
     }
