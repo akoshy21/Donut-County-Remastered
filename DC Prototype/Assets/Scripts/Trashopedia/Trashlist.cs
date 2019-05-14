@@ -1,38 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Trashlist : MonoBehaviour
 {
-    public static Trashlist instance;
+    // public static Trashlist instance;
 
-    public List<string> names = new List<string>();
-    public List<string> descs = new List<string>();
+    public Text objName;
+    public Text objDesc;
 
-    public string n0 = "Fun Flume Log";
-    public string d0 = "Ever think about all the other types of fumes besides log? I don't.";
+    private List<string> names = new List<string>();
+    private List<string> descs = new List<string>();
 
-    public string n1 = "Fun Flume";
-    public string d1 = "What kind of monster would destroy the Fun Flume?";
+    private string n0 = "Fun Flume Log";
+    private string d0 = "Ever think about all the other types of fumes besides log? I don't.";
 
-    public string n2 = "";
-    public string d2 = "";
+    private string n1 = "Fun Flume";
+    private string d1 = "What kind of monster would destroy the Fun Flume?";
 
-    public string n3 = "Cone";
-    public string d3 = "Cone is an underutilised and frankly disrespected shape.";
+    private string n2 = "";
+    private string d2 = "";
 
-    public string n4 = "Water Balloon Dispenser" ;
-    public string d4 = "Water balloons help you complete the puzzle.";
+    private string n3 = "Cone";
+    private string d3 = "Cone is an underutilised and frankly disrespected shape.";
 
-    public string n5 = "Castle" ;
-    public string d5 = "A princess house. Princesses make excellent garbage. ";
+    private string n4 = "Water Balloon Dispenser" ;
+    private string d4 = "Water balloons help you complete the puzzle.";
 
-    public string n6 = "";
-    public string d6 = "";
+    private string n5 = "Castle" ;
+    private string d5 = "A princess house. Princesses make excellent garbage. ";
 
-    public string n7 = "";
-    public string d7 = "";
+    private string n6 = "";
+    private string d6 = "";
+
+    private string n7 = "";
+    private string d7 = "";
+
+
+    int idx = 0;
 
     public void Start()
     {
@@ -53,5 +60,45 @@ public class Trashlist : MonoBehaviour
         descs.Add(d5);
         descs.Add(d6);
         descs.Add(d7);
+
+        objName.text = names[idx];
+        objDesc.text = descs[idx];
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            moveRight();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            moveLeft();
+        }
+    }
+
+    void moveRight()
+    {
+        idx--;
+
+        objName.text = names[idx];
+        objDesc.text = descs[idx];
+
+        //Debug.Log(idx);
+
+        return;
+    }
+
+    void moveLeft()
+    {
+        idx++;
+
+        objName.text = names[idx];
+        objDesc.text = descs[idx];
+
+       // Debug.Log(idx);
+
+        return;
     }
 }

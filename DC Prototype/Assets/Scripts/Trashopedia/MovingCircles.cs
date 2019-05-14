@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class MovingCircles : MonoBehaviour
 {
-    public GameObject objName;
-    public GameObject objDesc;
 
     public int speed;
 
@@ -22,7 +20,7 @@ public class MovingCircles : MonoBehaviour
     public Texture bgImg;
 
     public int first;
-    private int textnum = 0;
+    //private int textnum = 0;
 
     private List<string> names = new List<string>();
     private List<string> descs = new List<string>();
@@ -38,26 +36,8 @@ public class MovingCircles : MonoBehaviour
             j++;
         }
 
-        names.Add(Trashlist.instance.n0);
-        names.Add(Trashlist.instance.n1);
-        names.Add(Trashlist.instance.n2);
-        names.Add(Trashlist.instance.n3);
-        names.Add(Trashlist.instance.n4);
-        names.Add(Trashlist.instance.n5);
-        names.Add(Trashlist.instance.n6);
-        names.Add(Trashlist.instance.n7);
-
-        descs.Add(Trashlist.instance.d0);
-        descs.Add(Trashlist.instance.d1);
-        descs.Add(Trashlist.instance.d2);
-        descs.Add(Trashlist.instance.d3);
-        descs.Add(Trashlist.instance.d4);
-        descs.Add(Trashlist.instance.d5);
-        descs.Add(Trashlist.instance.d6);
-        descs.Add(Trashlist.instance.d7);
-
-        objName.GetComponent<Text>().text = names[textnum];
-        objDesc.GetComponent<Text>().text = descs[textnum];
+        //objName.GetComponent<Text>().text = names[textnum];
+        //objDesc.GetComponent<Text>().text = descs[textnum];
 
         right1.onClick.AddListener(RightArrow);
         left1.onClick.AddListener(LeftArrow);
