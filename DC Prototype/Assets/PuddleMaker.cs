@@ -16,17 +16,10 @@ public class PuddleMaker : MonoBehaviour
 
             if (this.gameObject.tag.Equals("fish"))
             {
+                Debug.Log("FISHY");
                 Instantiate(fish, new Vector3(this.transform.position.x, -0.5f, this.transform.position.z), Quaternion.identity);
             }
             Destroy(this.gameObject);
-        }
-    }
-
-    private void OnCollisionExit(Collision col)
-    {
-        if(this.gameObject.tag.Equals("fish"))
-        {
-            this.GetComponent<Rigidbody>().mass = 0.5f;
         }
     }
 }

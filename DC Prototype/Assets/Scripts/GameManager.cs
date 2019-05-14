@@ -44,9 +44,10 @@ public class GameManager : MonoBehaviour
         {
             mainCam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             hole = GameObject.FindWithTag("Hole");
+            hole.SetActive(false);
             StartGame();
-            dialogueCanvas = null;
-            StartCoroutine(dialogueCanvas.GetComponent<Faded>().FadeImage(true));
+            dialogueCanvas =null;
+            //StartCoroutine(dialogueCanvas.GetComponent<Faded>().FadeImage(true));
             names = null;
         }
         else if(!cutscene)

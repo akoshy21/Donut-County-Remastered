@@ -17,7 +17,7 @@ public class Catapult : MonoBehaviour
 
     void Start()
     {
-        waterShoot = GetComponent<ParticleSystem>();
+        //waterShoot = GetComponent<ParticleSystem>();
         waterTimer = 0f;
         CatapultModel.GetComponent<Animator>().enabled = false;
         manager = GetComponent<HoleManager>();  // set manager to HoleManager component
@@ -26,8 +26,8 @@ public class Catapult : MonoBehaviour
     void Update()
     {
         waterTimer = waterTimer + Time.deltaTime;
-        var emission = waterShoot.emission;
-        emission.enabled = waterOn;
+        // var emission = waterShoot.emission;
+        // emission.enabled = waterOn;
         if (waterTimer >= 2.5f)
         {
             waterOn = false;
