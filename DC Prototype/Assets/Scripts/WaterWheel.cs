@@ -98,6 +98,7 @@ public class WaterWheel : MonoBehaviour
                 gumball.GetComponent<Rigidbody>().isKinematic = false;
                 waterPuddle.gameObject.SetActive(true);
                 gumballNoGo.SetActive(false);
+                infinite.inf.puddle = true;
                 goOn = false;
             }
         }

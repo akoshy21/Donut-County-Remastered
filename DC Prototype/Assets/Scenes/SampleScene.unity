@@ -20964,7 +20964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   count: 0
   rotationAmount: 0
-  rotationStep: 0
+  rotationStep: 30
 --- !u!4 &4970445530443223209
 Transform:
   m_ObjectHideFlags: 0
