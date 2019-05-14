@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class MovingCircles : MonoBehaviour
 {
-    public Text objName;
-    public Text objDesc;
+    public GameObject objName;
+    public GameObject objDesc;
 
     public int speed;
 
@@ -38,9 +38,6 @@ public class MovingCircles : MonoBehaviour
             j++;
         }
 
-        objName.GetComponent<Text>();
-        objDesc.GetComponent<Text>();
-
         names.Add(Trashlist.instance.n0);
         names.Add(Trashlist.instance.n1);
         names.Add(Trashlist.instance.n2);
@@ -59,8 +56,14 @@ public class MovingCircles : MonoBehaviour
         descs.Add(Trashlist.instance.d6);
         descs.Add(Trashlist.instance.d7);
 
-        objName.text = names[textnum];
-        objDesc.text = descs[textnum];
+        objName.GetComponent<Text>().text = names[textnum];
+        objDesc.GetComponent<Text>().text = descs[textnum];
+
+        right1.onClick.AddListener(RightArrow);
+        left1.onClick.AddListener(LeftArrow);
+
+        right2.onClick.AddListener(RightArrow);
+        left2.onClick.AddListener(LeftArrow);
 
     }
 
