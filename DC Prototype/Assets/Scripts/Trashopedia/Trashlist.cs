@@ -8,6 +8,7 @@ public class Trashlist : MonoBehaviour
 {
     // public static Trashlist instance;
 
+    public MovingCircles circ;
     public Text objName;
     public Text objDesc;
 
@@ -39,10 +40,11 @@ public class Trashlist : MonoBehaviour
     private string d7 = "A home for used corn dogs.";
 
 
-    int idx = 0;
+    public int idx;
 
     public void Start()
     {
+        idx = 10 - circ.first;
         names.Add(n0);
         names.Add(n1);
         names.Add(n2);
@@ -63,6 +65,12 @@ public class Trashlist : MonoBehaviour
 
         objName.text = names[idx];
         objDesc.text = descs[idx];
+
+        circ.right1.onClick.AddListener(moveRight);
+        circ.left1.onClick.AddListener(moveLeft);
+
+        circ.right2.onClick.AddListener(moveRight);
+        circ.left2.onClick.AddListener(moveLeft);
     }
 
     private void Update()
@@ -80,23 +88,26 @@ public class Trashlist : MonoBehaviour
 
     void moveRight()
     {
-        idx--;
+        idx++;
+        if (idx >= 0 && idx <= names.Count)
+        {
+            objName.text = names[idx];
+            objDesc.text = descs[idx];
+        }
 
-        objName.text = names[idx];
-        objDesc.text = descs[idx];
-
-        //Debug.Log(idx);
+        Debug.Log(idx);
 
         return;
     }
 
     void moveLeft()
     {
-        idx++;
-
-        objName.text = names[idx];
-        objDesc.text = descs[idx];
-
+        idx--;
+        if (idx >= 0 && idx <= names.Count)
+        {
+            objName.text = names[idx];
+            objDesc.text = descs[idx];
+        }
        // Debug.Log(idx);
 
         return;
