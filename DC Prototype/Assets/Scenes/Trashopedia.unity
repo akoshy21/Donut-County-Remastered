@@ -536,6 +536,8 @@ MonoBehaviour:
   mainImg: {fileID: 2800000, guid: fb33d1c76a279ca40b4e8e985d24495f, type: 3}
   bgImg: {fileID: 2800000, guid: 24737e7e0bbf93c40bbcb5d0bb95249b, type: 3}
   first: 10
+  names: []
+  descs: []
 --- !u!1 &1122324634
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,75 +689,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289218752}
   m_CullTransparentMesh: 0
---- !u!1 &1324666222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1324666224}
-  - component: {fileID: 1324666223}
-  m_Layer: 0
-  m_Name: Trash List
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1324666223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324666222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fee35902967d3940ae9aee1b70e2a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  names: []
-  descs: []
-  n0: Fun Flume Log
-  d0: Ever think about all the other types of fumes besides log? I don't.
-  m0: {fileID: 0}
-  n1: 
-  d1: 
-  m1: {fileID: 0}
-  n2: 
-  d2: 
-  m2: {fileID: 0}
-  n3: 
-  d3: 
-  m3: {fileID: 0}
-  n4: 
-  d4: 
-  m4: {fileID: 0}
-  n5: Castle
-  d5: 'A princess house. Princesses make excellent garbage. '
-  m5: {fileID: 0}
-  n6: 
-  d6: 
-  m6: {fileID: 0}
-  n7: 
-  d7: 
-  m7: {fileID: 0}
---- !u!4 &1324666224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324666222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 271.26733, y: 186.71048, z: 8.254488}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370049990
 GameObject:
   m_ObjectHideFlags: 0

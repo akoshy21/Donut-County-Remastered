@@ -22,6 +22,10 @@ public class MovingCircles : MonoBehaviour
     public Texture bgImg;
 
     public int first;
+    private int textnum = 0;
+
+    private List<string> names = new List<string>();
+    private List<string> descs = new List<string>();
 
     void Start()
     {
@@ -33,10 +37,36 @@ public class MovingCircles : MonoBehaviour
             objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
             j++;
         }
+
+        objName.GetComponent<Text>();
+        objDesc.GetComponent<Text>();
+
+        names.Add(Trashlist.instance.n0);
+        names.Add(Trashlist.instance.n1);
+        names.Add(Trashlist.instance.n2);
+        names.Add(Trashlist.instance.n3);
+        names.Add(Trashlist.instance.n4);
+        names.Add(Trashlist.instance.n5);
+        names.Add(Trashlist.instance.n6);
+        names.Add(Trashlist.instance.n7);
+
+        descs.Add(Trashlist.instance.d0);
+        descs.Add(Trashlist.instance.d1);
+        descs.Add(Trashlist.instance.d2);
+        descs.Add(Trashlist.instance.d3);
+        descs.Add(Trashlist.instance.d4);
+        descs.Add(Trashlist.instance.d5);
+        descs.Add(Trashlist.instance.d6);
+        descs.Add(Trashlist.instance.d7);
+
+        objName.text = names[textnum];
+        objDesc.text = descs[textnum];
+
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
                 RightArrow();     
@@ -55,13 +85,11 @@ public class MovingCircles : MonoBehaviour
                 
                 objs[i].GetComponent<RectTransform>().localScale = Vector3.Lerp(new Vector3(1.7f, 1.7f, 1.7f), new Vector3(.7f, .7f, .7f), speed * Time.deltaTime);
 
-                objName.text = Trashlist.instance.names[i];
-                objDesc.text = Trashlist.instance.descs[i];
-
             }
             else
             {
                 objs[i].GetComponent<RawImage>().texture = bgImg;
+                
                 // objs[i].GetComponent<RectTransform>().localScale = new Vector3(.6f, .6f, .6f);
                 objs[i].GetComponent<RectTransform>().localScale = Vector3.Lerp(new Vector3(.7f, .7f, .7f), new Vector3(1.7f, 1.7f, 1.7f), speed * Time.deltaTime);
             }
@@ -82,6 +110,12 @@ public class MovingCircles : MonoBehaviour
             j++;
         }
 
+        /*if (textnum < 7)
+        {
+            objName.text = names[textnum + 1];
+            objDesc.text = descs[textnum + 1];
+        }*/
+
         return;
     }
 
@@ -96,6 +130,12 @@ public class MovingCircles : MonoBehaviour
             objs[j].GetComponent<RectTransform>().anchoredPosition = pos[i];
             j++;
         }
+
+        /*if (textnum > 0)
+        {
+            objName.text = names[textnum - 1];
+            objDesc.text = descs[textnum - 1];
+        }*/
 
         return;
     }
