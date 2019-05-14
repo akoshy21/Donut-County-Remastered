@@ -8,13 +8,13 @@ public class FerrisWheelSpin : MonoBehaviour
     public float rotationAmount, rotationStep;
 
     public GameObject cam;
+    public bool crashed = false;
 
     private void Update()
     {
-        if (rotationAmount >= rotationStep)
+        if (!crashed)
         {
             this.transform.Rotate(0, 0, rotationStep * Time.deltaTime);
-            rotationAmount -= rotationStep * Time.deltaTime;
         }
     }
 
@@ -22,12 +22,11 @@ public class FerrisWheelSpin : MonoBehaviour
     {
         if (num > 1)
         {
-            rotationAmount += 160;
-            rotationStep = 60;
+            rotationStep += 60;
             cam.GetComponent<CameraMover>().selectedWP++;
         }
         else {
-            rotationAmount += 80;
+            rotationStep += 80;
         }
     }
 
