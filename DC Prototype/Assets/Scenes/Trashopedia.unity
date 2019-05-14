@@ -497,6 +497,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3ea56a9890f2947b386f997d724cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objName: {fileID: 0}
+  objDesc: {fileID: 0}
   right1: {fileID: 1414592230}
   right2: {fileID: 2016888941}
   left1: {fileID: 1370049992}
@@ -530,6 +532,9 @@ MonoBehaviour:
   - {fileID: 1608022038}
   - {fileID: 1435525483}
   - {fileID: 1859449862}
+  mainImg: {fileID: 2800000, guid: fb33d1c76a279ca40b4e8e985d24495f, type: 3}
+  bgImg: {fileID: 2800000, guid: 24737e7e0bbf93c40bbcb5d0bb95249b, type: 3}
+  first: 10
 --- !u!1 &1122324634
 GameObject:
   m_ObjectHideFlags: 0
