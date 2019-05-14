@@ -143,6 +143,7 @@ MonoBehaviour:
   waterFill: 0
   water: {fileID: 0}
   cam: {fileID: 0}
+  holeLead: {fileID: 0}
   pop: {fileID: 0}
 --- !u!1 &116290733
 GameObject:
@@ -5290,7 +5291,13 @@ MonoBehaviour:
   hole: {fileID: 0}
   gameScene: 0
   start: 1
+  paused: 0
   mainCam: {fileID: 0}
+  names: {fileID: 0}
+  intro: 0
+  oof: 0
+  cutscene: 1
+  dialogueCanvas: {fileID: 0}
 --- !u!4 &417286511
 Transform:
   m_ObjectHideFlags: 0
@@ -10930,7 +10937,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976183232}
   m_LocalRotation: {x: -0.63301986, y: -0, z: -0, w: 0.77413553}
-  m_LocalPosition: {x: -0.06, y: -1.53, z: -2.4}
+  m_LocalPosition: {x: -0.06, y: -1.04, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
