@@ -115,10 +115,10 @@ public class GameManager : MonoBehaviour
     IEnumerator IntroSequence()
     {
         intro = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         mainCam.GetComponent<CameraMover>().selectedWP = 1;
         Debug.Log("MOVE OVER");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         mainCam.GetComponent<CameraMover>().selectedWP = 2;
         SceneManager.LoadScene("StartAdditive", LoadSceneMode.Additive);
         start = true;

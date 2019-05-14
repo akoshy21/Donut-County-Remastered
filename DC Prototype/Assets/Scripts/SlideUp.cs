@@ -8,6 +8,7 @@ public class SlideUp : MonoBehaviour
     public GameObject slide;
     public float speed;
     bool up;
+    public GameObject wheel;
 
     private void Update()
     {
@@ -25,6 +26,7 @@ public class SlideUp : MonoBehaviour
         if(collision.gameObject.tag.Equals("water"))
         {
             up = true;
+            wheel.GetComponent<WaterWheel>().goOn = true;
             Debug.Log("WATER");
         }
     }

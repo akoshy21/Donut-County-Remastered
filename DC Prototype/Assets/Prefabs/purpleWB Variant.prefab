@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puddle: {fileID: 2407047086132458811, guid: 9a650dcd31c4c4069a863ea58fe73f1d, type: 3}
   fish: {fileID: 5663552520755477076, guid: 811a1957ef7a44704b326ed0c04ed32b, type: 3}
+  launched: 0
+  fishy: 0
 --- !u!1001 &918827126177259995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,11 +82,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 96.26401
-      objectReference: {fileID: 0}
-    - target: {fileID: 3356997253231143498, guid: 9d7e3cba8c30342899a456b52174377e,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3356997253231143499, guid: 9d7e3cba8c30342899a456b52174377e,
         type: 3}

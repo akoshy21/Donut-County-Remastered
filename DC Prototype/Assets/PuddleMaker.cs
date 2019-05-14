@@ -7,6 +7,7 @@ public class PuddleMaker : MonoBehaviour
     public GameObject puddle;
     public GameObject fish;
     public bool launched;
+    public bool fishy;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,10 +15,10 @@ public class PuddleMaker : MonoBehaviour
         {
             Instantiate(puddle, new Vector3(this.transform.position.x, -0.6f, this.transform.position.z), Quaternion.identity);
 
-            if (this.gameObject.tag.Equals("fish"))
+            if (fishy)
             {
                 Debug.Log("FISHY");
-                Instantiate(fish, new Vector3(this.transform.position.x, -0.5f, this.transform.position.z), Quaternion.identity);
+                Instantiate(fish, new Vector3(this.transform.position.x, -0.4f, this.transform.position.z), Quaternion.identity);
             }
             Destroy(this.gameObject);
         }

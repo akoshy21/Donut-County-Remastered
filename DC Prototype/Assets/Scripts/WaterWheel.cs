@@ -11,6 +11,7 @@ public class WaterWheel : MonoBehaviour
 
     public GameObject logBoy;
     public bool move;
+    public bool goOn;
 
     public GameObject maincam;
     public float rotationAmount, rotationStep;
@@ -62,18 +63,37 @@ public class WaterWheel : MonoBehaviour
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         hit = false;
     }
 
     void MoveThatCoon() {
-        if (ind < nextPos.Length)
+        if (ind < 3)
         {
             logBoy.transform.position = Vector3.Lerp(logBoy.transform.position, nextPos[ind], speed * Time.deltaTime);
             logBoy.transform.rotation = Quaternion.Lerp(logBoy.transform.rotation, Quaternion.Euler(nextRot[ind]), Time.deltaTime * speed);
         }
-        else {
-            logBoy.GetComponentInChildren<Rigidbody>().isKinematic = false;
+        else if(ind >= 3 && ind < 10)
+        {
+            logBoy.transform.position = Vector3.Lerp(logBoy.transform.position, nextPos[ind], speed * Time.deltaTime);
+            logBoy.transform.rotation = Quaternion.Lerp(logBoy.transform.rotation, Quaternion.Euler(nextRot[ind]), Time.deltaTime * speed);
+
+            if (Vector3.Distance(logBoy.transform.position, nextPos[ind]) <= 0.25f)
+            {
+                ind++;
+            }
+        }
+        else if(ind == 10)
+        {
+            if (goOn)
+            {
+                logBoy.transform.position = Vector3.Lerp(logBoy.transform.position, nextPos[ind], speed * Time.deltaTime);
+                logBoy.transform.rotation = Quaternion.Lerp(logBoy.transform.rotation, Quaternion.Euler(nextRot[ind]), Time.deltaTime * speed);
+            }
+            if (Vector3.Distance(logBoy.transform.position, nextPos[ind]) <= 0.25f)
+            {
+                logBoy.GetComponentInChildren<Rigidbody>().isKinematic = false;
+            }
         }
     }
 
