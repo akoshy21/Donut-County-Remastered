@@ -104,6 +104,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        if(SceneManager.GetActiveScene().name.Equals("SampleScene"))
+        {
+            End(); 
+        }
+
     }
 
     void StartGame()
@@ -129,5 +134,15 @@ public class GameManager : MonoBehaviour
     public void MainScene()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void End()
+    {
+        GameObject[] goList = GameObject.FindGameObjectsWithTag("eatable");
+
+        if(goList.Length <= 1)
+        {
+            SceneManager.LoadScene("Trashopedia");
+        }
     }
 }

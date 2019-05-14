@@ -10,6 +10,7 @@ public class Castle_Launch : MonoBehaviour
     Rigidbody rb;
     MeshCollider mc;
     bool esploded = false;
+    public bool explode;
     float colliderCount = 60;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class Castle_Launch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && esploded == false)
+        if (explode && esploded == false)
         {
             esploded = true;
             rb.isKinematic = false;

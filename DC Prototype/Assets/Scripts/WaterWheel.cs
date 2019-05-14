@@ -85,7 +85,7 @@ public class WaterWheel : MonoBehaviour
                 ind++;
             }
         }
-        else if(ind == 10)
+        else if(ind == 10 && logBoy !=null)
         {
             if (goOn)
             {
