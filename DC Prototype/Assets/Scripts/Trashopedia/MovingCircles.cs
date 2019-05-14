@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class MovingCircles : MonoBehaviour
 {
+    public Text objName;
+    public Text objDesc;
+
     public Button right1;
     public Button right2;
     public Button left1;
@@ -13,7 +16,10 @@ public class MovingCircles : MonoBehaviour
     public List<Vector3> pos = new List<Vector3>();
     public List<GameObject> objs = new List<GameObject>();
 
-    private int first = 9;
+    public Texture mainImg;
+    public Texture bgImg;
+
+    public int first;
 
     void Start()
     {
@@ -37,6 +43,18 @@ public class MovingCircles : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             LeftArrow();
+        }
+
+        for (int i = 0; i < 7; i++) {
+
+            if (objs[i].GetComponent<RectTransform>().anchoredPosition.Equals(pos[first]))
+            {
+                objs[i].GetComponent<RawImage>().texture = mainImg;
+            }
+            else
+            {
+                objs[i].GetComponent<RawImage>().texture = bgImg;
+            }
         }
     }
 
